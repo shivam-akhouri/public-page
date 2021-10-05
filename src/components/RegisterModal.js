@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
 import { Modal } from "bootstrap";
 
 export default function RegisterModal() {
@@ -16,6 +15,50 @@ export default function RegisterModal() {
     residential_address: "",
     pincode: "",
     city: "",
+  });
+  const [err1, setErr1] = useState({
+    valid: true,
+    msg: "",
+  });
+  const [err2, setErr2] = useState({
+    valid: true,
+    msg: "",
+  });
+  const [err3, setErr3] = useState({
+    valid: true,
+    msg: "",
+  });
+  const [err4, setErr4] = useState({
+    valid: true,
+    msg: "",
+  });
+  const [err5, setErr5] = useState({
+    valid: true,
+    msg: "",
+  });
+  const [err6, setErr6] = useState({
+    valid: true,
+    msg: "",
+  });
+  const [err7, setErr7] = useState({
+    valid: true,
+    msg: "",
+  });
+  const [err8, setErr8] = useState({
+    valid: true,
+    msg: "",
+  });
+  const [err9, setErr9] = useState({
+    valid: true,
+    msg: "",
+  });
+  const [err10, setErr10] = useState({
+    valid: true,
+    msg: "",
+  });
+  const [err11, setErr11] = useState({
+    valid: true,
+    msg: "",
   });
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -43,7 +86,134 @@ export default function RegisterModal() {
       })
       .catch((e) => console.log(e));
   }
+
+  function validation(){
+    let valid = true;
+
+    //name
+    if(!register.name.match(/^[a-zA-Z][A-Za-z\s]*$/)){
+      valid = false;
+      if(register.name === ""){
+        setErr1({ ...err1, valid: false });
+        setErr1({ ...err1, msg: "Name cannot be empty!" });
+      }else{
+        setErr1({ ...err1, valid: false });
+        setErr1({ ...err1, msg: "Invalid name!" });
+      }
+    }
+    
+    //email
+    if (!register.email.match(/^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/)) {
+      valid = false;
+      if (register.email === "") {
+        setErr2({ ...err2, valid: false });
+        setErr2({ ...err2, msg: "Email cannot be empty!" });
+      } else {
+        setErr2({ ...err2, valid: false });
+        setErr2({ ...err2, msg: "Invalid Email!" });
+      }
+    }
+
+    //phone number
+    if (!register.number.match(/((\+*)((0[ -]*)*|((91 )*))((\d{12})+|(\d{10})+))|\d{5}([- ]*)\d{6}/)) {
+      valid = false;
+      if (register.number === "") {
+        setErr3({ ...err3, valid: false });
+        setErr3({ ...err3, msg: "Phone number cannot be empty!" });
+      } else {
+        setErr3({ ...err3, valid: false });
+        setErr3({ ...err3, msg: "Invalid Phone Number!" });
+      }
+    }
+
+    //password
+    if(register.password.length < 8){
+      valid=false;
+      setErr4({ ...err4, valid: false });
+      setErr4({ ...err4, msg: "Passwords need to be at least 8 charachters!" });
+    }
+
+    //gender
+    if(register.gender === ""){
+      valid=false;
+      setErr5({ ...err5, valid: false });
+      setErr5({ ...err5, msg: "Gender cannot be empty!" });
+    }
+
+    //language
+    if(register.language === ""){
+      valid=false;
+      setErr6({ ...err6, valid: false });
+      setErr6({ ...err6, msg: "Language cannot be empty!" });
+    }
+
+    //dob
+    if(register.dob === ""){
+      valid=false;
+      setErr7({ ...err7, valid: false });
+      setErr7({ ...err7, msg: "Date of Birth cannot be empty!" });
+    }
+
+    //City
+    if(!register.city.match(/^[a-zA-Z][A-Za-z\s]*$/)){
+      valid = false;
+      if(register.city === ""){
+        setErr8({ ...err8, valid: false });
+        setErr8({ ...err8, msg: "City cannot be empty!" });
+      }else{
+        setErr8({ ...err8, valid: false });
+        setErr8({ ...err8, msg: "Invalid city!" });
+      }
+    }
+
+    //address
+    if(register.residential_address === ""){
+      valid = false;
+      setErr9({ ...err9, valid: false });
+      setErr9({ ...err9, msg: "Residential Address cannot be empty!" });
+    }
+
+    //state
+    if(register.state === ""){
+      valid = false;
+      setErr10({ ...err10, valid: false });
+      setErr10({ ...err10, msg: "State cannot be empty!" });
+    }
+    
+    //pincode
+    if(register.pincode.length !== 6){
+      valid = false;
+      setErr11({ ...err11, valid: false });
+      setErr11({ ...err11, msg: "Invalid pincode!" });
+    }
+
+    return valid;
+  }
+  
   async function userRegister() {
+    setErr1({ ...err1, valid: true });
+    setErr1({ ...err1, msg: "" });
+    setErr2({ ...err2, valid: true });
+    setErr2({ ...err2, msg: "" });
+    setErr3({ ...err3, valid: true });
+    setErr3({ ...err3, msg: "" });
+    setErr4({ ...err4, valid: true });
+    setErr4({ ...err4, msg: "" });
+    setErr5({ ...err5, valid: true });
+    setErr5({ ...err5, msg: "" });
+    setErr6({ ...err6, valid: true });
+    setErr6({ ...err6, msg: "" });
+    setErr7({ ...err7, valid: true });
+    setErr7({ ...err7, msg: "" });
+    setErr8({ ...err8, valid: true });
+    setErr8({ ...err8, msg: "" });
+    setErr9({ ...err9, valid: true });
+    setErr9({ ...err9, msg: "" });
+    setErr10({ ...err10, valid: true });
+    setErr10({ ...err10, msg: "" });
+    setErr11({ ...err11, valid: true });
+    setErr11({ ...err11, msg: "" });
+    
     let item = {
       name: register.name,
       email: register.email,
@@ -58,7 +228,9 @@ export default function RegisterModal() {
       pincode: register.pincode,
       city: register.city,
     };
-    await fetch("https://pragyanpandey05.pythonanywhere.com/api/register1", {
+    const result = validation();
+    if(result){
+      await fetch("https://pragyanpandey05.pythonanywhere.com/api/register1", {
       method: "POST",
       headers: {
         Accept: "application/json",
@@ -97,27 +269,12 @@ export default function RegisterModal() {
           let successModal = new Modal(document.getElementById("successModal"));
           successModal.show();
           sendSMS(data);
-          // fetch ("https://pragyanpandey05.pythonanywhere.com/api/webmessage",{
-          //   method: "POST",
-          //   headers: {
-          //     Accept: "application/json",
-          //     "Content-Type": "application/json",
-          //   },
-          //   body: JSON.stringify(data)
-          // })
-          // .then(res => {
-          //   if(res.data.status === "message sent"){
-          //     console.log('Succ')
-          //   }else{
-          //     console.log("Failed to send message")
-          //   }
-          // }).catch(e => console.log(e))
-          //alert('Congratulations, your account has been successfully created.');
         }
       })
       .catch((error) => {
         console.error(error);
       });
+    }
   }
 
   return (
@@ -184,6 +341,7 @@ export default function RegisterModal() {
                     />
                     <label htmlFor="m_fullname">Full Name</label>
                   </div>
+                  <label htmlFor="m_fullname" style={{color: 'red'}}>{err1.msg}</label>
                 </div>
                 <div className="col-lg-6 mb-3">
                   <div className="form-floating">
@@ -198,6 +356,7 @@ export default function RegisterModal() {
                     />
                     <label htmlFor="m_email">Email ID</label>
                   </div>
+                  <label htmlFor="m_fullname" style={{color: 'red'}}>{err2.msg}</label>
                 </div>
                 <div className="col-lg-6 mb-3">
                   <div className="form-floating">
@@ -212,6 +371,7 @@ export default function RegisterModal() {
                     />
                     <label htmlFor="m_phonenumber">Phone Number</label>
                   </div>
+                  <label htmlFor="m_fullname" style={{color: 'red'}}>{err3.msg}</label>
                 </div>
                 <div className="col-lg-6 mb-3">
                   <div className="form-floating">
@@ -227,6 +387,7 @@ export default function RegisterModal() {
                     />
                     <label htmlFor="m_password">Set Password</label>
                   </div>
+                  <label htmlFor="m_fullname" style={{color: 'red'}}>{err4.msg}</label>
                 </div>
                 <div className="col-lg-6 mb-3">
                   <div className="form-floating">
@@ -246,6 +407,7 @@ export default function RegisterModal() {
                     </select>
                     <label htmlFor="m_gender">Gender</label>
                   </div>
+                  <label htmlFor="m_fullname" style={{color: 'red'}}>{err5.msg}</label>
                 </div>
                 <div className="col-lg-6 mb-3">
                   <div className="form-floating">
@@ -267,6 +429,7 @@ export default function RegisterModal() {
                     </select>
                     <label htmlFor="m_classname">Select Language</label>
                   </div>
+                  <label htmlFor="m_fullname" style={{color: 'red'}}>{err6.msg}</label>
                 </div>
                 <div className="col-lg-6 mb-3">
                   <div className="form-floating">
@@ -283,6 +446,7 @@ export default function RegisterModal() {
                     />
                     <label htmlFor="m_dob">Date of Birth</label>
                   </div>
+                  <label htmlFor="m_fullname" style={{color: 'red'}}>{err7.msg}</label>
                 </div>
                 <div className="col-lg-6 mb-3">
                   <div className="form-floating">
@@ -297,6 +461,7 @@ export default function RegisterModal() {
                     />
                     <label htmlFor="m_city">City</label>
                   </div>
+                  <label htmlFor="m_fullname" style={{color: 'red'}}>{err8.msg}</label>
                 </div>
                 <div className="col-lg-6 mb-3">
                   <div className="form-floating">
@@ -311,6 +476,7 @@ export default function RegisterModal() {
                     />
                     <label htmlFor="m_raddress">Residential Address</label>
                   </div>
+                  <label htmlFor="m_fullname" style={{color: 'red'}}>{err9.msg}</label>
                 </div>
                 <div className="col-lg-6 mb-3">
                   <div className="form-floating">
@@ -328,6 +494,7 @@ export default function RegisterModal() {
                     </select>
                     <label htmlFor="m_state">State</label>
                   </div>
+                  <label htmlFor="m_fullname" style={{color: 'red'}}>{err10.msg}</label>
                 </div>
                 <div className="col-lg-6 mb-3">
                   <div className="form-floating">
@@ -346,6 +513,7 @@ export default function RegisterModal() {
                     />
                     <label htmlFor="m_pincode">Pincode</label>
                   </div>
+                  <label htmlFor="m_fullname" style={{color: 'red'}}>{err11.msg}</label>
                 </div>
                 <div className="col-lg-6 mb-3">
                   <div className="form-floating">
