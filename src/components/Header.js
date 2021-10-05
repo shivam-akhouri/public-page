@@ -44,40 +44,32 @@ export default function Header() {
               <div className="d-none d-md-inline-block ">
                 <ul className="list-inline text-nowrap">
                   <li className="list-inline-item">
-                    <Link to="#" className="top-social social-fb">
-                      <a href="https://www.facebook.com/Desh-Ke-Mentor-107174851688515/" style={{color: "inherit" }}>
+                      <a href="https://www.facebook.com/Desh-Ke-Mentor-107174851688515/" className="top-social social-fb">
                         <svg className="icon icon-4x">
                           <use href="#icon_facebook"></use>
                         </svg>
                       </a>
-                    </Link>
                   </li>
                   <li className="list-inline-item">
-                    <Link to="#" className="top-social social-insta">
-                      <a href="https://instagram.com/deshkementor?utm_medium=copy_link" style={{color: "inherit" }}>
+                      <a href="https://instagram.com/deshkementor?utm_medium=copy_link" className="top-social social-insta">
                         <svg className="icon icon-4x">
                           <use href="#icon_instagram"></use>
                         </svg>
                       </a>
-                    </Link>
                   </li>
                   <li className="list-inline-item">
-                    <Link to="#" className="top-social social-tw">
-                      <a href="https://twitter.com/DeshKeMentor?s=20" style={{color: "inherit" }}>
+                      <a href="https://twitter.com/DeshKeMentor?s=20" className="top-social social-tw">
                         <svg className="icon icon-4x">
                           <use href="#icon_twitter"></use>
                         </svg>
                       </a>
-                    </Link>
                   </li>
                   <li className="list-inline-item">
-                    <Link to="#" className="top-social social-yt">
-                      <a href="https://youtube.com/channel/UCW2QzzkkzohkKYhVFpsfiAw" style={{color: "inherit" }}>
+                      <a href="https://youtube.com/channel/UCW2QzzkkzohkKYhVFpsfiAw" className="top-social social-yt">
                         <svg className="icon icon-4x">
                           <use href="#icon_youtube"></use>
                         </svg>
                       </a>
-                    </Link>
                   </li>
                   <li className="list-inline-item">
                     <Link
