@@ -19,7 +19,7 @@ export default function Home() {
           <div className="col-sm-12 text-center sub-heading">
             Students have started their mentoring journey.
             <br />
-            Find your mentee now, and start the journey!
+            Find your mentee now and start the journey!
           </div>
         </div>
         <div className="row mt-4 mt-md-5 position-relative">
@@ -102,7 +102,7 @@ export default function Home() {
       >
         <div className="row justify-content-center">
           <div className="col-sm-10 col-md-8">
-            <h2 className="heading-2 text-center">What is Desh ke Mentor</h2>
+            <h2 className="heading-2 text-center">What is Desh ke Mentor?</h2>
             <div className="text-center mt-3">
               <img
                 src={"images/greenboard.png"}
@@ -282,7 +282,7 @@ export default function Home() {
                 <h2 className="heading-2 text-md-end">Mentees</h2>
                 <div className="common-box bg-white p-3 p-sm-4 p-md-5">
                   <div className="m-0 fs-sm-23">
-                    A mentee is a student studying in 10th-12th Standard at a
+                    A mentee is a student studying in 9th-12th Standard at a
                     Delhi Government School.
                     <ul className="mb-0">
                       <li>Help them in career exploration journey</li>

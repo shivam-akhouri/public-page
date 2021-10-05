@@ -16,6 +16,7 @@ export default function RegisterModal() {
     pincode: "",
     city: "",
   });
+  const [isDelhi, setIsDelhi] = useState(true);
   const [err1, setErr1] = useState({
     valid: true,
     msg: "",
@@ -62,13 +63,16 @@ export default function RegisterModal() {
   });
   const handleChange = (e) => {
     const { name, value } = e.target;
+    console.log(name,value);
+    if(name === "state" && value === 'Delhi'){
+      setIsDelhi(false);
+    }
     setRegister((prevState) => ({
       ...prevState,
       [name]: value,
     }));
   };
   async function sendSMS(data) {
-    console.log(data)
     await fetch("https://pragyanpandey05.pythonanywhere.com/api/webmessage", {
       method: "POST",
       headers: {
@@ -76,7 +80,8 @@ export default function RegisterModal() {
         "Content-Type": "application/json",
       },
       body: JSON.stringify(data),
-    }).then(res => res.json())
+    })
+      .then((res) => res.json())
       .then((json) => {
         if (json.status === "message sent") {
           console.log("Succ");
@@ -87,23 +92,25 @@ export default function RegisterModal() {
       .catch((e) => console.log(e));
   }
 
-  function validation(){
+  function validation() {
     let valid = true;
 
     //name
-    if(!register.name.match(/^[a-zA-Z][A-Za-z\s]*$/)){
+    if (!register.name.match(/^[a-zA-Z][A-Za-z\s]*$/)) {
       valid = false;
-      if(register.name === ""){
+      if (register.name === "") {
         setErr1({ ...err1, valid: false });
         setErr1({ ...err1, msg: "Name cannot be empty!" });
-      }else{
+      } else {
         setErr1({ ...err1, valid: false });
         setErr1({ ...err1, msg: "Invalid name!" });
       }
     }
-    
+
     //email
-    if (!register.email.match(/^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/)) {
+    if (
+      !register.email.match(/^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/)
+    ) {
       valid = false;
       if (register.email === "") {
         setErr2({ ...err2, valid: false });
@@ -115,7 +122,11 @@ export default function RegisterModal() {
     }
 
     //phone number
-    if (!register.number.match(/((\+*)((0[ -]*)*|((91 )*))((\d{12})+|(\d{10})+))|\d{5}([- ]*)\d{6}/)) {
+    if (
+      !register.number.match(
+        /((\+*)((0[ -]*)*|((91 )*))((\d{12})+|(\d{10})+))|\d{5}([- ]*)\d{6}/
+      )
+    ) {
       valid = false;
       if (register.number === "") {
         setErr3({ ...err3, valid: false });
@@ -127,61 +138,61 @@ export default function RegisterModal() {
     }
 
     //password
-    if(register.password.length < 8){
-      valid=false;
+    if (register.password.length < 8) {
+      valid = false;
       setErr4({ ...err4, valid: false });
       setErr4({ ...err4, msg: "Passwords need to be at least 8 charachters!" });
     }
 
     //gender
-    if(register.gender === ""){
-      valid=false;
+    if (register.gender === "") {
+      valid = false;
       setErr5({ ...err5, valid: false });
       setErr5({ ...err5, msg: "Gender cannot be empty!" });
     }
 
     //language
-    if(register.language === ""){
-      valid=false;
+    if (register.language === "") {
+      valid = false;
       setErr6({ ...err6, valid: false });
       setErr6({ ...err6, msg: "Language cannot be empty!" });
     }
 
     //dob
-    if(register.dob === ""){
-      valid=false;
+    if (register.dob === "") {
+      valid = false;
       setErr7({ ...err7, valid: false });
       setErr7({ ...err7, msg: "Date of Birth cannot be empty!" });
     }
 
     //City
-    if(!register.city.match(/^[a-zA-Z][A-Za-z\s]*$/)){
+    if (!register.city.match(/^[a-zA-Z][A-Za-z\s]*$/)) {
       valid = false;
-      if(register.city === ""){
+      if (register.city === "") {
         setErr8({ ...err8, valid: false });
         setErr8({ ...err8, msg: "City cannot be empty!" });
-      }else{
+      } else {
         setErr8({ ...err8, valid: false });
         setErr8({ ...err8, msg: "Invalid city!" });
       }
     }
 
     //address
-    if(register.residential_address === ""){
+    if (register.residential_address === "") {
       valid = false;
       setErr9({ ...err9, valid: false });
       setErr9({ ...err9, msg: "Residential Address cannot be empty!" });
     }
 
     //state
-    if(register.state === ""){
+    if (register.state === "") {
       valid = false;
       setErr10({ ...err10, valid: false });
       setErr10({ ...err10, msg: "State cannot be empty!" });
     }
-    
+
     //pincode
-    if(register.pincode.length !== 6){
+    if (register.pincode.length !== 6) {
       valid = false;
       setErr11({ ...err11, valid: false });
       setErr11({ ...err11, msg: "Invalid pincode!" });
@@ -189,7 +200,18 @@ export default function RegisterModal() {
 
     return valid;
   }
-  
+
+  function dataFormatter() {
+    let x =
+      register.dob.substring(8, 10) +
+      "/" +
+      register.dob.substring(5, 7) +
+      "/" +
+      register.dob.substring(0, 4);
+    console.log(x);
+    return x;
+  }
+
   async function userRegister() {
     setErr1({ ...err1, valid: true });
     setErr1({ ...err1, msg: "" });
@@ -213,13 +235,13 @@ export default function RegisterModal() {
     setErr10({ ...err10, msg: "" });
     setErr11({ ...err11, valid: true });
     setErr11({ ...err11, msg: "" });
-    
+
     let item = {
       name: register.name,
       email: register.email,
       number: register.number,
       password: register.password,
-      dob: register.dob,
+      dob: dataFormatter(),
       gender: register.gender,
       language: register.language,
       state: register.state,
@@ -228,52 +250,55 @@ export default function RegisterModal() {
       pincode: register.pincode,
       city: register.city,
     };
+    console.log(item);
     const result = validation();
-    if(result){
+    if (result) {
       await fetch("https://pragyanpandey05.pythonanywhere.com/api/register1", {
-      method: "POST",
-      headers: {
-        Accept: "application/json",
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(item),
-    })
-      .then((response) => response.json())
-      .then((json) => {
-        if (json.status === "entry not added") {
-          alert("Please fill in all fields");
-        }
-        if (json.status === "user already exists") {
-          alert("User already exists");
-        }
-        if (json.status === "entry added") {
-          const data = {
-            number: register.number,
-          };
-          setRegister({
-            name: "",
-            email: "",
-            number: "",
-            password: "",
-            dob: "",
-            gender: "",
-            language: "",
-            state: "",
-            area: "",
-            residential_address: "",
-            pincode: "",
-            city: "",
-          });
-          document.getElementById("registerModalDismiss").click();
-
-          let successModal = new Modal(document.getElementById("successModal"));
-          successModal.show();
-          sendSMS(data);
-        }
+        method: "POST",
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(item),
       })
-      .catch((error) => {
-        console.error(error);
-      });
+        .then((response) => response.json())
+        .then((json) => {
+          if (json.status === "entry not added") {
+            alert("Please fill in all fields");
+          }
+          if (json.status === "user already exists") {
+            alert("User already exists");
+          }
+          if (json.status === "entry added") {
+            const data = {
+              number: register.number,
+            };
+            setRegister({
+              name: "",
+              email: "",
+              number: "",
+              password: "",
+              dob: "",
+              gender: "",
+              language: "",
+              state: "",
+              area: "",
+              residential_address: "",
+              pincode: "",
+              city: "",
+            });
+            document.getElementById("registerModalDismiss").click();
+
+            let successModal = new Modal(
+              document.getElementById("successModal")
+            );
+            successModal.show();
+            sendSMS(data);
+          }
+        })
+        .catch((error) => {
+          console.error(error);
+        });
     }
   }
 
@@ -341,7 +366,9 @@ export default function RegisterModal() {
                     />
                     <label htmlFor="m_fullname">Full Name</label>
                   </div>
-                  <label htmlFor="m_fullname" style={{color: 'red'}}>{err1.msg}</label>
+                  <label htmlFor="m_fullname" style={{ color: "red" }}>
+                    {err1.msg}
+                  </label>
                 </div>
                 <div className="col-lg-6 mb-3">
                   <div className="form-floating">
@@ -356,7 +383,9 @@ export default function RegisterModal() {
                     />
                     <label htmlFor="m_email">Email ID</label>
                   </div>
-                  <label htmlFor="m_fullname" style={{color: 'red'}}>{err2.msg}</label>
+                  <label htmlFor="m_fullname" style={{ color: "red" }}>
+                    {err2.msg}
+                  </label>
                 </div>
                 <div className="col-lg-6 mb-3">
                   <div className="form-floating">
@@ -371,7 +400,9 @@ export default function RegisterModal() {
                     />
                     <label htmlFor="m_phonenumber">Phone Number</label>
                   </div>
-                  <label htmlFor="m_fullname" style={{color: 'red'}}>{err3.msg}</label>
+                  <label htmlFor="m_fullname" style={{ color: "red" }}>
+                    {err3.msg}
+                  </label>
                 </div>
                 <div className="col-lg-6 mb-3">
                   <div className="form-floating">
@@ -387,7 +418,9 @@ export default function RegisterModal() {
                     />
                     <label htmlFor="m_password">Set Password</label>
                   </div>
-                  <label htmlFor="m_fullname" style={{color: 'red'}}>{err4.msg}</label>
+                  <label htmlFor="m_fullname" style={{ color: "red" }}>
+                    {err4.msg}
+                  </label>
                 </div>
                 <div className="col-lg-6 mb-3">
                   <div className="form-floating">
@@ -407,7 +440,9 @@ export default function RegisterModal() {
                     </select>
                     <label htmlFor="m_gender">Gender</label>
                   </div>
-                  <label htmlFor="m_fullname" style={{color: 'red'}}>{err5.msg}</label>
+                  <label htmlFor="m_fullname" style={{ color: "red" }}>
+                    {err5.msg}
+                  </label>
                 </div>
                 <div className="col-lg-6 mb-3">
                   <div className="form-floating">
@@ -429,7 +464,9 @@ export default function RegisterModal() {
                     </select>
                     <label htmlFor="m_classname">Select Language</label>
                   </div>
-                  <label htmlFor="m_fullname" style={{color: 'red'}}>{err6.msg}</label>
+                  <label htmlFor="m_fullname" style={{ color: "red" }}>
+                    {err6.msg}
+                  </label>
                 </div>
                 <div className="col-lg-6 mb-3">
                   <div className="form-floating">
@@ -446,7 +483,9 @@ export default function RegisterModal() {
                     />
                     <label htmlFor="m_dob">Date of Birth</label>
                   </div>
-                  <label htmlFor="m_fullname" style={{color: 'red'}}>{err7.msg}</label>
+                  <label htmlFor="m_fullname" style={{ color: "red" }}>
+                    {err7.msg}
+                  </label>
                 </div>
                 <div className="col-lg-6 mb-3">
                   <div className="form-floating">
@@ -461,7 +500,9 @@ export default function RegisterModal() {
                     />
                     <label htmlFor="m_city">City</label>
                   </div>
-                  <label htmlFor="m_fullname" style={{color: 'red'}}>{err8.msg}</label>
+                  <label htmlFor="m_fullname" style={{ color: "red" }}>
+                    {err8.msg}
+                  </label>
                 </div>
                 <div className="col-lg-6 mb-3">
                   <div className="form-floating">
@@ -476,7 +517,9 @@ export default function RegisterModal() {
                     />
                     <label htmlFor="m_raddress">Residential Address</label>
                   </div>
-                  <label htmlFor="m_fullname" style={{color: 'red'}}>{err9.msg}</label>
+                  <label htmlFor="m_fullname" style={{ color: "red" }}>
+                    {err9.msg}
+                  </label>
                 </div>
                 <div className="col-lg-6 mb-3">
                   <div className="form-floating">
@@ -490,11 +533,57 @@ export default function RegisterModal() {
                       <option value="" disabled>
                         -
                       </option>
+                      <option value="Andhra Pradesh">Andhra Pradesh</option>
+                      <option value="Andaman and Nicobar Islands">
+                        Andaman and Nicobar Islands
+                      </option>
+                      <option value="Arunachal Pradesh">
+                        Arunachal Pradesh
+                      </option>
+                      <option value="Assam">Assam</option>
+                      <option value="Bihar">Bihar</option>
+                      <option value="Chandigarh">Chandigarh</option>
+                      <option value="Chhattisgarh">Chhattisgarh</option>
+                      <option value="Dadar and Nagar Haveli">
+                        Dadar and Nagar Haveli
+                      </option>
+                      <option value="Daman and Diu">Daman and Diu</option>
                       <option value="Delhi">Delhi</option>
+                      <option value="Lakshadweep">Lakshadweep</option>
+                      <option value="Ladakh">Ladakh</option>
+                      <option value="Puducherry">Puducherry</option>
+                      <option value="Goa">Goa</option>
+                      <option value="Gujarat">Gujarat</option>
+                      <option value="Haryana">Haryana</option>
+                      <option value="Himachal Pradesh">Himachal Pradesh</option>
+                      <option value="Jammu and Kashmir">
+                        Jammu and Kashmir
+                      </option>
+                      <option value="Jharkhand">Jharkhand</option>
+                      <option value="Karnataka">Karnataka</option>
+                      <option value="Kerala">Kerala</option>
+                      <option value="Madhya Pradesh">Madhya Pradesh</option>
+                      <option value="Maharashtra">Maharashtra</option>
+                      <option value="Manipur">Manipur</option>
+                      <option value="Meghalaya">Meghalaya</option>
+                      <option value="Mizoram">Mizoram</option>
+                      <option value="Nagaland">Nagaland</option>
+                      <option value="Odisha">Odisha</option>
+                      <option value="Punjab">Punjab</option>
+                      <option value="Rajasthan">Rajasthan</option>
+                      <option value="Sikkim">Sikkim</option>
+                      <option value="Tamil Nadu">Tamil Nadu</option>
+                      <option value="Telangana">Telangana</option>
+                      <option value="Tripura">Tripura</option>
+                      <option value="Uttar Pradesh">Uttar Pradesh</option>
+                      <option value="Uttarakhand">Uttarakhand</option>
+                      <option value="West Bengal">West Bengal</option>
                     </select>
                     <label htmlFor="m_state">State</label>
                   </div>
-                  <label htmlFor="m_fullname" style={{color: 'red'}}>{err10.msg}</label>
+                  <label htmlFor="m_fullname" style={{ color: "red" }}>
+                    {err10.msg}
+                  </label>
                 </div>
                 <div className="col-lg-6 mb-3">
                   <div className="form-floating">
@@ -513,7 +602,9 @@ export default function RegisterModal() {
                     />
                     <label htmlFor="m_pincode">Pincode</label>
                   </div>
-                  <label htmlFor="m_fullname" style={{color: 'red'}}>{err11.msg}</label>
+                  <label htmlFor="m_fullname" style={{ color: "red" }}>
+                    {err11.msg}
+                  </label>
                 </div>
                 <div className="col-lg-6 mb-3">
                   <div className="form-floating">
@@ -522,6 +613,7 @@ export default function RegisterModal() {
                       id="m_area"
                       name="area"
                       onChange={handleChange}
+                      disabled={isDelhi}
                       value={register.area}
                     >
                       <option value="" disabled>
