@@ -1,0 +1,13 @@
+@font-face {
+    font-family: 'squeaky chalk sound';
+    src: url('squeakychalksound.eot');
+    src: url('squeakychalksound.eot?#iefix') format('embedded-opentype'),
+        url('squeakychalksound.woff2') format('woff2'),
+        url('squeakychalksound.woff') format('woff'),
+        url('squeakychalksound.ttf') format('truetype'),
+        url('squeakychalksound.svg#squeakychalksound') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
