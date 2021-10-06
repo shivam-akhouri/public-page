@@ -1,8 +1,38 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import MainSlider from "../components/MainSlider";
 
 export default function Home() {
   document.title = "Desh Ke Mentor | Home";
+
+  const [mentors,setMentors] = useState("0");
+  const [mentees,setMentees] = useState("0");
+  const [callsMade,setCallsMade] = useState("0"); 
+  const [minuteCount,setMinuteCount] = useState("0");
+  const [no_of_students,setNoOfStudents] = useState("000000");
+  // var no_of_students = "000000"
+
+  useEffect(()=> {
+      async function getStats(){
+        await fetch("https://pragyanpandey05.pythonanywhere.com/api/publicstat")
+      .then(res => res.json())
+      .then(res => {
+        setMentors(res.mentor_count);
+        setMentees(res.mentee_count.toString());
+        setCallsMade(res.call_count);
+        setMinuteCount(res.minute_count);
+      })
+      .catch(e => console.log(e));
+      }
+    getStats();
+  },[])
+
+  String.prototype.replaceAt = function(index, replacement) {
+    return this.substr(0, index) + replacement + this.substr(index + replacement.length);
+  }
+
+  useEffect(()=> {
+    setNoOfStudents(no_of_students.substring(0,6-mentees.length)+mentees);
+  },[mentees])
 
   return (
     <>
@@ -10,11 +40,12 @@ export default function Home() {
       <div className="container-fluid py-5">
         <div className="row justify-content-center">
           <div className="col-sm-12 text-center my-4">
-            <div className="counter-box">5</div>
-            <div className="counter-box">0</div>
-            <div className="counter-box">0</div>
-            <div className="counter-box">0</div>
-            <div className="counter-box">0</div>
+            <div className="counter-box">{no_of_students[0]}</div>
+            <div className="counter-box">{no_of_students[1]}</div>
+            <div className="counter-box">{no_of_students[2]}</div>
+            <div className="counter-box">{no_of_students[3]}</div>
+            <div className="counter-box">{no_of_students[4]}</div>
+            <div className="counter-box">{no_of_students[5]}</div>
           </div>
           <div className="col-sm-12 text-center sub-heading">
             Students have started their mentoring journey.
@@ -347,23 +378,23 @@ export default function Home() {
             <h2 className="heading-1 our-impact">Our Impact</h2>
           </div>
           <div className="col-6 col-lg-3 mt-3">
-            <h2 className="display-5 ff-scs text-cyan">9,650</h2>
+            <h2 className="display-5 ff-scs text-cyan">{mentors}</h2>
             <p className="fs-sm-23">Mentors</p>
           </div>
           <div className="col-6 col-lg-3 mt-3">
-            <h2 className="display-5 ff-scs text-cyan">31,000</h2>
+            <h2 className="display-5 ff-scs text-cyan">{mentees}</h2>
             <p className="fs-sm-23">Mentees</p>
           </div>
           <div className="col-6 col-lg-3 mt-3">
             <h2 className="display-5 ff-scs text-cyan">
-              1 lac
+              {callsMade} lac
               <strong className="fw-bold text-yellow">+</strong>
             </h2>
             <p className="fs-sm-23">Calls Made</p>
           </div>
           <div className="col-6 col-lg-3 mt-3">
             <h2 className="display-5 ff-scs text-cyan">
-              10 lac
+              {minuteCount} lac
               <strong className="fw-bold text-yellow">+</strong>
             </h2>
             <p className="fs-sm-23">Minutes dedicated to Mentoring</p>
