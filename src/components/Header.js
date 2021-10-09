@@ -28,12 +28,12 @@ export default function Header() {
           <div className="row align-items-center">
             <div className="col-6 col-md-5 col-lg-4">
               <Link to="#" className="top-logo">
-                <img src={"images/logo.png"} alt="logo" />
+                <img src={"images/logo.png"} alt="logo" className="top-logo"/>
               </Link>
             </div>
             <div className="col d-none d-lg-block text-center">
               <h1>देश के मेन्टर</h1>
-              <h5>An initiative of Youth for Education</h5>
+              {/* <h5>An initiative of Youth for Education</h5> */}
             </div>
             <div className="col-6 col-md-7 col-lg-4 text-end">
               <button className="btn btn-light rounded-0 d-inline-block d-md-none mobile-menu-toggle">

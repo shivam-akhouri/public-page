@@ -236,8 +236,7 @@ export default function Home() {
           <div className="col-sm-10">
             <div className="common-box bg-white p-3 p-sm-4 p-md-5">
               <p className="m-0 fs-sm-23">
-                <strong>Desh Ke Mentor</strong>, an initiative under{" "}
-                <strong>Youth for Education</strong>, is the nation’s largest
+                <strong>Desh Ke Mentor</strong>, is the nation’s largest
                 mentoring program launched by the{" "}
                 <strong>Delhi government</strong> under the guidance and
                 honourable leadership of <strong>CM Arvind Kejriwal</strong> and{" "}
@@ -245,7 +244,7 @@ export default function Home() {
                 Under Desh Ke Mentor, students of Delhi Government schools
                 (mentees) will undertake a{" "}
                 <strong>career exploration journey</strong> that will help them
-                to make informed career choices.
+                make informed career choices.
               </p>
             </div>
           </div>

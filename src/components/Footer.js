@@ -14,7 +14,7 @@ export default function Footer() {
       <div className="row">
         <div className="col-sm-5 col-lg-3 py-4">
           <Link to="{}" className="footer-logo">
-            <img src={"images/logo.png"} alt="logo" />
+            <img src={"images/logo.png"} alt="logo" className="footer-logo"/>
           </Link>
         </div>
         <div className="col-6 col-sm-7 col-lg-3 py-4">
@@ -102,6 +102,18 @@ export default function Footer() {
                   <use href="#icon_youtube"></use>
                 </svg>
               </a>
+            </li>
+          </ul>
+          <h4>Info</h4>
+          <ul className="footer-links">
+            <li className="footer-links">
+              <a className="footer-links disabled">Address</a> <br/>
+              <p className="footer-links">
+                FW4FF9, 1st Floor
+                Mechanical Engineering Department
+                Delhi Technological University
+                Bawana Road, Delhi-110042, India
+              </p>
             </li>
           </ul>
         </div>
