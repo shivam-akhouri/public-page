@@ -10,7 +10,7 @@ function openModal(e) {
 
 export default function Footer() {
   return (
-    <footer className="container-fluid">
+    <footer className="container-fluid" id="contact-us">
       <div className="row">
         <div className="col-sm-5 col-lg-3 py-4">
           <Link to="{}" className="footer-logo">
@@ -108,11 +108,24 @@ export default function Footer() {
           <ul className="footer-links">
             <li className="footer-links">
               <a className="footer-links disabled">Address</a> <br/>
-              <p className="footer-links">
-                FW4FF9, 1st Floor
+              <p className="footer-para">
+                FW4FF9, 1st Floor<br/>
                 Mechanical Engineering Department
-                Delhi Technological University
+                Delhi Technological University<br/>
                 Bawana Road, Delhi-110042, India
+              </p>
+            </li>
+            <li>
+              <a className="footer-links disabled">Phone</a> <br/>
+              <p className="footer-para">
+                +91 11 2729 8073<br/>
+                +91 93158 49885<br/>
+              </p>
+            </li>
+            <li>
+              <a className="footer-links disabled">Email</a> <br/>
+              <p className="footer-para">
+                contact@deshkementor.com
               </p>
             </li>
           </ul>

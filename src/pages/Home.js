@@ -427,18 +427,14 @@ export default function Home() {
             </h2>
             <div className="common-box p-3 p-sm-4 p-md-5">
               <p className="m-0 fs-sm-23">
-                Mitashi , a teacher by profession, started her journey with 5
-                mentees. Over the period of time they got so connected with each
-                other, that all of them helped each other in different
-                scenarios.
+                Mitashi, a teacher, started her journey with 5 mentees. 
+                Over a period of time, Mitashi and her mentees supported each other actively and developed a profound connection.
                 <br />
                 <br />
-                During the second lockdown, when we all were concerned about our
-                close ones' well-being, Mitashi was worried about her mentee's
-                mental health. She started playing online games with her
-                mentees, being a teacher by profession she even started group
-                studies google meet, in order to help them to cope up with their
-                mental health and keep them up with their studies.
+                In fact, during the second lockdown, when everyone was concerned about the well-being of their close ones,
+                Mitashi was concerned about the mental health of her mentees. 
+                To help them, she initiated several dedicated activities geared towards preserving the students’ 
+                mental well-being and organised online group study sessions.
               </p>
             </div>
           </div>
@@ -473,15 +469,12 @@ export default function Home() {
             </h2>
             <div className="common-box p-3 p-sm-4 p-md-5">
               <p className="m-0 fs-sm-23">
-                Mentors who were part of the YFE pilot journey, they started
-                interacting with each other. Some of them who were preparing for
-                Civil services, formed their groups, where they used to discuss
-                current affairs, discussions related to different government
-                schemes and even conducted their own group interviews.
+              Mentors who were part of the Desh Ke Mentor pilot journey created a community group and started interacting with each other. 
+              Some of them who were preparing for UPSC formed groups, discussed current affairs, and even conducted their own group interviews.
                 <br />
                 <br />
-                Others helped each other with booking vaccination slots, helping
-                their mentees in ration collection from school.
+                Another group helped each other during the COVID-19 crisis by booking vaccination slots—they all even 
+                coordinated ration collection from schools to help their mentees. 
               </p>
             </div>
           </div>

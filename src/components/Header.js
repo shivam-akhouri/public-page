@@ -72,12 +72,12 @@ export default function Header() {
                       </a>
                   </li>
                   <li className="list-inline-item">
-                    <Link
-                      to="#"
+                    <a
+                      href="#contact-us"
                       className="btn btn-sm btn-outline-primary text-uppercase"
                     >
                       Contact Us
-                    </Link>
+                    </a>
                   </li>
                   <li className="list-inline-item">
                     <Link

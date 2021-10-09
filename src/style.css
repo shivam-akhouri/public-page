@@ -426,6 +426,11 @@ footer .copyrights {
   color: rgba(255, 255, 255, 0.75);
 }
 
+footer .footer-para{
+  color: #fff;
+  font-size: 12px;
+}
+
 .modal-content .form-floating label {
   font-weight: 600;
 }
