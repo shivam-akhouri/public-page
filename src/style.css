@@ -189,6 +189,11 @@ header {
   opacity: 0.70;
 }
 
+.top-logo{
+  width: 150px;
+  height: 100px;
+}
+
 .navigation {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -359,6 +364,8 @@ footer {
 }
 
 footer .footer-logo img {
+  width: 150px;
+  height: 100px;
   -webkit-filter: brightness(0) invert(1);
           filter: brightness(0) invert(1);
 }
@@ -417,6 +424,11 @@ footer .copyrights {
   text-align: center;
   font-size: 14px;
   color: rgba(255, 255, 255, 0.75);
+}
+
+footer .footer-para{
+  color: #fff;
+  font-size: 12px;
 }
 
 .modal-content .form-floating label {
