@@ -242,7 +242,7 @@ export default function Home() {
                   <iframe
                     width="100%"
                     height="100%"
-                    src="https://www.youtube.com/embed/Jdv9uTM2-gw"
+                    src="https://www.youtube.com/embed/K21md2eJA6Y"
                     title="YouTube video player"
                     frameBorder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
