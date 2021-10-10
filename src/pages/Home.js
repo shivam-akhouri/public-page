@@ -1,38 +1,53 @@
 import React, { useEffect, useState } from "react";
 import MainSlider from "../components/MainSlider";
+import CountUp, { useCountUp } from "react-countup";
 
 export default function Home() {
   document.title = "Desh Ke Mentor | Home";
 
-  const [mentors,setMentors] = useState("0");
-  const [mentees,setMentees] = useState("0");
-  const [callsMade,setCallsMade] = useState("0"); 
-  const [minuteCount,setMinuteCount] = useState("0");
-  const [no_of_students,setNoOfStudents] = useState("000000");
+  const [mentors, setMentors] = useState("0");
+  const [mentees, setMentees] = useState("0");
+  const [callsMade, setCallsMade] = useState("0");
+  const [minuteCount, setMinuteCount] = useState("0");
+  const [no_of_students, setNoOfStudents] = useState("000000");
   // var no_of_students = "000000"
 
-  useEffect(()=> {
-      async function getStats(){
-        await fetch("https://pragyanpandey05.pythonanywhere.com/api/publicstat")
-      .then(res => res.json())
-      .then(res => {
-        setMentors(res.mentor_count);
-        setMentees(res.mentee_count.toString());
-        setCallsMade(res.call_count);
-        setMinuteCount(res.minute_count);
-      })
-      .catch(e => console.log(e));
-      }
+  const [loading, setLoading] = React.useState(false);
+  const onStart = () => {
+    setLoading(true);
+  };
+  const onEnd = () => {
+    setLoading(false);
+  };
+  const containerProps = {
+    "aria-busy": loading,
+  };
+  useEffect(() => {
+    async function getStats() {
+      await fetch("https://pragyanpandey05.pythonanywhere.com/api/publicstat")
+        .then((res) => res.json())
+        .then((res) => {
+          setMentors(res.mentor_count);
+          setMentees(res.mentee_count.toString());
+          setCallsMade(res.call_count);
+          setMinuteCount(res.minute_count);
+        })
+        .catch((e) => console.log(e));
+    }
     getStats();
-  },[])
+  }, []);
 
-  String.prototype.replaceAt = function(index, replacement) {
-    return this.substr(0, index) + replacement + this.substr(index + replacement.length);
-  }
+  String.prototype.replaceAt = function (index, replacement) {
+    return (
+      this.substr(0, index) +
+      replacement +
+      this.substr(index + replacement.length)
+    );
+  };
 
-  useEffect(()=> {
-    setNoOfStudents(no_of_students.substring(0,6-mentees.length)+mentees);
-  },[mentees])
+  useEffect(() => {
+    setNoOfStudents(no_of_students.substring(0, 6 - mentees.length) + mentees);
+  }, [mentees]);
 
   return (
     <>
@@ -40,12 +55,64 @@ export default function Home() {
       <div className="container-fluid py-5">
         <div className="row justify-content-center">
           <div className="col-sm-12 text-center my-4">
-            <div className="counter-box">{no_of_students[0]}</div>
-            <div className="counter-box">{no_of_students[1]}</div>
-            <div className="counter-box">{no_of_students[2]}</div>
-            <div className="counter-box">{no_of_students[3]}</div>
-            <div className="counter-box">{no_of_students[4]}</div>
-            <div className="counter-box">{no_of_students[5]}</div>
+            <div className="counter-box">
+              <CountUp
+                end={no_of_students[0]}
+                duration=".3"
+                onStart={onStart}
+                onEnd={onEnd}
+                containerProps={containerProps}
+              />
+            </div>
+            <div className="counter-box">
+              {" "}
+              <CountUp
+                end={no_of_students[1]}
+                duration=".3"
+                onStart={onStart}
+                onEnd={onEnd}
+                containerProps={containerProps}
+              />
+            </div>
+            <div className="counter-box">
+              {" "}
+              <CountUp
+                end={no_of_students[2]}
+                duration=".3"
+                onStart={onStart}
+                onEnd={onEnd}
+                containerProps={containerProps}
+              />
+            </div>
+            <div className="counter-box">
+              {" "}
+              <CountUp
+                end={no_of_students[3]}
+                duration=".3"
+                onStart={onStart}
+                onEnd={onEnd}
+                containerProps={containerProps}
+              />
+            </div>
+            <div className="counter-box">
+              {" "}
+              <CountUp
+                end={no_of_students[3]}
+                duration=".3"
+                onStart={onStart}
+                onEnd={onEnd}
+                containerProps={containerProps}
+              />
+            </div>
+            <div className="counter-box">
+              <CountUp
+                end={no_of_students[5]}
+                duration=".3"
+                onStart={onStart}
+                onEnd={onEnd}
+                containerProps={containerProps}
+              />
+            </div>
           </div>
           <div className="col-sm-12 text-center sub-heading">
             Students have started their mentoring journey.
@@ -231,7 +298,9 @@ export default function Home() {
       >
         <div className="row justify-content-center">
           <div className="col-sm-12 text-center my-4">
-            <h2 className="heading-1" id="about-us">About Us</h2>
+            <h2 className="heading-1" id="about-us">
+              About Us
+            </h2>
           </div>
           <div className="col-sm-10">
             <div className="common-box bg-white p-3 p-sm-4 p-md-5">
@@ -427,14 +496,17 @@ export default function Home() {
             </h2>
             <div className="common-box p-3 p-sm-4 p-md-5">
               <p className="m-0 fs-sm-23">
-                Mitashi, a teacher, started her journey with 5 mentees. 
-                Over a period of time, Mitashi and her mentees supported each other actively and developed a profound connection.
+                Mitashi, a teacher, started her journey with 5 mentees. Over a
+                period of time, Mitashi and her mentees supported each other
+                actively and developed a profound connection.
                 <br />
                 <br />
-                In fact, during the second lockdown, when everyone was concerned about the well-being of their close ones,
-                Mitashi was concerned about the mental health of her mentees. 
-                To help them, she initiated several dedicated activities geared towards preserving the students’ 
-                mental well-being and organised online group study sessions.
+                In fact, during the second lockdown, when everyone was concerned
+                about the well-being of their close ones, Mitashi was concerned
+                about the mental health of her mentees. To help them, she
+                initiated several dedicated activities geared towards preserving
+                the students’ mental well-being and organised online group study
+                sessions.
               </p>
             </div>
           </div>
@@ -469,12 +541,16 @@ export default function Home() {
             </h2>
             <div className="common-box p-3 p-sm-4 p-md-5">
               <p className="m-0 fs-sm-23">
-              Mentors who were part of the Desh Ke Mentor pilot journey created a community group and started interacting with each other. 
-              Some of them who were preparing for UPSC formed groups, discussed current affairs, and even conducted their own group interviews.
+                Mentors who were part of the Desh Ke Mentor pilot journey
+                created a community group and started interacting with each
+                other. Some of them who were preparing for UPSC formed groups,
+                discussed current affairs, and even conducted their own group
+                interviews.
                 <br />
                 <br />
-                Another group helped each other during the COVID-19 crisis by booking vaccination slots—they all even 
-                coordinated ration collection from schools to help their mentees. 
+                Another group helped each other during the COVID-19 crisis by
+                booking vaccination slots—they all even coordinated ration
+                collection from schools to help their mentees.
               </p>
             </div>
           </div>
