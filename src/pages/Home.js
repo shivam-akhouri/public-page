@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from "react";
 import MainSlider from "../components/MainSlider";
 import CountUp, { useCountUp } from "react-countup";
-
+import OwlCarousel from "react-owl-carousel";
+import "owl.carousel/dist/assets/owl.carousel.css";
+import "owl.carousel/dist/assets/owl.theme.default.css";
 export default function Home() {
   document.title = "Desh Ke Mentor | Home";
 
@@ -58,7 +60,7 @@ export default function Home() {
             <div className="counter-box">
               <CountUp
                 end={no_of_students[0]}
-                duration=".3"
+                duration=".5"
                 onStart={onStart}
                 onEnd={onEnd}
                 containerProps={containerProps}
@@ -68,7 +70,7 @@ export default function Home() {
               {" "}
               <CountUp
                 end={no_of_students[1]}
-                duration=".3"
+                duration=".5"
                 onStart={onStart}
                 onEnd={onEnd}
                 containerProps={containerProps}
@@ -78,7 +80,7 @@ export default function Home() {
               {" "}
               <CountUp
                 end={no_of_students[2]}
-                duration=".3"
+                duration=".5"
                 onStart={onStart}
                 onEnd={onEnd}
                 containerProps={containerProps}
@@ -88,7 +90,7 @@ export default function Home() {
               {" "}
               <CountUp
                 end={no_of_students[3]}
-                duration=".3"
+                duration=".5"
                 onStart={onStart}
                 onEnd={onEnd}
                 containerProps={containerProps}
@@ -98,7 +100,7 @@ export default function Home() {
               {" "}
               <CountUp
                 end={no_of_students[3]}
-                duration=".3"
+                duration=".5"
                 onStart={onStart}
                 onEnd={onEnd}
                 containerProps={containerProps}
@@ -107,7 +109,7 @@ export default function Home() {
             <div className="counter-box">
               <CountUp
                 end={no_of_students[5]}
-                duration=".3"
+                duration=".5"
                 onStart={onStart}
                 onEnd={onEnd}
                 containerProps={containerProps}
@@ -200,16 +202,38 @@ export default function Home() {
       >
         <div className="row justify-content-center">
           <div className="col-sm-10 col-md-8">
-            <h2 className="heading-2 text-center">What is Desh ke Mentor?</h2>
-            <div className="text-center mt-3">
-              <img
-                src={"images/greenboard.png"}
-                alt="greenboard"
-                className="mw-100"
-              />
-            </div>
+            <h2
+              className="heading-2 text-center"
+              style={{ marginBottom: "5%" }}
+            >
+              What is Desh ke Mentor?
+            </h2>
+
+            <OwlCarousel
+              className="owl-theme text-center mt-3"
+              dots={false}
+              autoplay={true}
+              autoplayTimeout={5000}
+              autoplayHoverPause={false}
+              center={true}
+              loop
+              margin={1}
+              items={1}
+              style={{ width: "70%", paddingBottom: "10%", marginLeft: "15%" }}
+            >
+              <div class="item">
+                <img src="images/greenboard1.png" />
+              </div>
+              <div class="item">
+                <img src="images/greenboard1.png" />
+              </div>
+              <div class="item">
+                <img src="images/greenboard1.png" />
+              </div>
+            </OwlCarousel>
           </div>
         </div>
+
         <img
           alt="curve shape"
           src={"images/curve-shape.png"}
