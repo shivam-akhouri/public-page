@@ -225,10 +225,10 @@ export default function Home() {
                 <img src="images/greenboard1.png" />
               </div>
               <div class="item">
-                <img src="images/greenboard1.png" />
+                <img src="images/greenboard2.png" />
               </div>
               <div class="item">
-                <img src="images/greenboard1.png" />
+                <img src="images/greenboard3.png" />
               </div>
             </OwlCarousel>
           </div>
@@ -266,7 +266,7 @@ export default function Home() {
                   <iframe
                     width="100%"
                     height="100%"
-                    src="https://www.youtube.com/embed/K21md2eJA6Y"
+                    src="https://www.youtube.com/embed/7JJfyCNrtzA"
                     title="YouTube video player"
                     frameBorder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"

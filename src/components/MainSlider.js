@@ -45,7 +45,7 @@ function MainSlider() {
       <div className="item">
         <div className="slider-box">
           <div className="sb-left">
-            <img src={"images/slide2.jpg"} alt="slide 2" />
+            <img src={"images/slide6.jpg"} alt="slide 2" />
           </div>
           <div className="sb-right">
             <h3>Your 10 minutes can change someone's life</h3>
@@ -84,7 +84,9 @@ function MainSlider() {
             <img src={"images/slide4.jpg"} alt="slide 4" />
           </div>
           <div className="sb-right">
-            <h3>10 Lakh children are waiting to start their mentorship journey</h3>
+            <h3>
+              10 Lakh children are waiting to start their mentorship journey
+            </h3>
             <h3 className="text-white py-3">देश के मेन्टर</h3>
             <Link
               to="/"
@@ -102,7 +104,10 @@ function MainSlider() {
             <img src={"images/slide5.jpg"} alt="slide 5" />
           </div>
           <div className="sb-right">
-            <h3>You can help Prashant fulfill his dreams of becoming a pilot or a police officer</h3>
+            <h3>
+              You can help Prashant fulfill his dreams of becoming a pilot or a
+              police officer
+            </h3>
             <h3 className="text-white py-3">देश के मेन्टर</h3>
             <Link
               to="/"
