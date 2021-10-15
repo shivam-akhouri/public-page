@@ -197,7 +197,7 @@ export default function Home() {
       <div
         className="container-fluid position-relative overflow-hidden teacher-bg"
         style={{
-          background: `url(${"images/gb-background.png"})`,
+          // background: `url(${"images/gb-background.png"})`,
         }}
       >
         <div className="row justify-content-center">
@@ -206,7 +206,7 @@ export default function Home() {
               className="heading-2 text-center"
               style={{ marginBottom: "5%" }}
             >
-              What is Desh ke Mentor?
+              What is Desh Ke Mentor?
             </h2>
 
             <OwlCarousel
@@ -342,7 +342,7 @@ export default function Home() {
             </div>
           </div>
           <div className="col-sm-12 text-center my-4 py-5">
-            <h2 className="heading-2">We Need Desh ke Mentors!</h2>
+            <h2 className="heading-2">We Need Desh Ke Mentors!</h2>
             <div className="row mt-3 justify-content-center">
               <div className="col-sm-12 col-md-10 col-lg-8 col-xl-7">
                 <div className="ratio ratio-16x9 rounded-12 overflow-hidden">
@@ -419,12 +419,12 @@ export default function Home() {
           </div>
           <img
             src={"images/mentor.png"}
-            className="shape shape-8"
+            className="shape shape-8 mentor-image"
             alt="shape-8"
           />
           <img
             src={"images/mentee.png"}
-            className="shape shape-9"
+            className="shape shape-9 mentor-image"
             alt="shape-9"
           />
         </div>
@@ -441,7 +441,7 @@ export default function Home() {
       >
         <div className="row justify-content-center">
           <div className="col-sm-12 text-center mt-4">
-            <h2 className="heading-1">Desh ke Mentor Journey</h2>
+            <h2 className="heading-1">Desh Ke Mentor Journey</h2>
           </div>
           <div className="col-sm-10 py-4">
             <img
@@ -511,7 +511,7 @@ export default function Home() {
             <div className="text-center">
               <img
                 src={"images/1-story.jpg"}
-                className="mw-100 w-auto"
+                className="mw-100 w-auto stories-images"
                 alt="story1"
               />
             </div>
@@ -556,7 +556,7 @@ export default function Home() {
             <div className="text-center">
               <img
                 src={"images/2-story.jpg"}
-                className="mw-100 w-auto"
+                className="mw-100 w-auto stories-images"
                 alt="story-2"
               />
             </div>

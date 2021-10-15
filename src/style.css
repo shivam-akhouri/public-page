@@ -356,6 +356,7 @@ header {
   background-position: center bottom !important;
   padding-bottom: 220px;
   padding-top: 100px;
+  background: url("./images/gb-background.png");
 }
 
 footer {
@@ -564,6 +565,18 @@ footer .footer-para{
   top: 15%;
 }
 
+.stories-images{
+  width: 512px;
+  height: 512px;
+  border-radius: 2%;
+}
+
+.mentor-image{
+  width: 220px;
+  right: -20px;
+  z-index: -1;
+}
+
 @media (min-width: 576px) {
   .fs-sm-20 {
     font-size: 20px;
@@ -579,6 +592,51 @@ footer .footer-para{
   }
 }
 
+@media(max-width: 768px){
+  .shape-1{
+    z-index: -1;
+  }
+  .shape-6z{
+    z-index: -1;
+  }
+  .shape-10{
+    z-index: -1;
+  }
+  .shape-11{
+    z-index: -1;
+  }
+  .shape-12{
+    z-index: -1;
+  }
+}
+
+@media(max-width: 576px){
+  .teacher-bg {
+    background: none;
+  }
+  .mentor-image{
+    display: none;
+  }
+  .stories-images{
+    height: 256px;
+  }
+  .shape-1{
+    z-index: -1;
+  }
+  .shape-6z{
+    z-index: -1;
+  }
+  .shape-10{
+    z-index: -1;
+  }
+  .shape-11{
+    z-index: -1;
+  }
+  .shape-12{
+    z-index: -1;
+  }
+}
+
 @media (max-width: 767.99px) {
   header {
     position: -webkit-sticky;
@@ -589,7 +647,8 @@ footer .footer-para{
             box-shadow: 0px 2px 8px rgba(0, 33, 87, 0.15);
   }
   header .top-logo img {
-    height: 48px;
+    height: 50px;
+    width: 50px;
   }
   .navigation {
     position: fixed;

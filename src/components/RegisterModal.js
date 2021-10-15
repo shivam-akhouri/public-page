@@ -61,6 +61,9 @@ export default function RegisterModal() {
     valid: true,
     msg: "",
   });
+  const [startDate, setStartDate] = useState("");
+  const [endDate, setEndDate] = useState("");
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     console.log(name,value);
@@ -72,6 +75,19 @@ export default function RegisterModal() {
       [name]: value,
     }));
   };
+
+  React.useEffect(() => {
+    function minMaxFinder(){
+      const thisYear = new Date();
+      const endDate = thisYear.getFullYear()-18;
+      const startDate = endDate - 17;
+      setStartDate(startDate+"-01-01");
+      setEndDate(endDate+"-12-31");
+    }
+    minMaxFinder()
+  })
+  
+
   async function sendSMS(data) {
     await fetch("https://pragyanpandey05.pythonanywhere.com/api/webmessage", {
       method: "POST",
@@ -478,8 +494,8 @@ export default function RegisterModal() {
                       name="dob"
                       onChange={handleChange}
                       value={register.dob}
-                      min="1985-01-01"
-                      max="2003-12-31"
+                      min={startDate}
+                      max={endDate}
                     />
                     <label htmlFor="m_dob">Date of Birth</label>
                   </div>
