@@ -79,14 +79,14 @@ export default function Header() {
                       Contact Us
                     </a>
                   </li>
-                  <li className="list-inline-item">
+                  {/* <li className="list-inline-item">
                     <Link
                       to="#"
                       className="btn btn-sm btn-primary text-uppercase"
                     >
                       Login
                     </Link>
-                  </li>
+                  </li> */}
                 </ul>
                 <div className="text-center">
                   <img
