@@ -24,7 +24,9 @@ export default function Footer() {
               <a href="#about-us">About Us</a>
             </li>
             <li>
-              <a className="disabled">Team</a>
+              <a className="footer-links"
+                href="https://docs.google.com/document/d/1OeOFTGfRV8TLPvO99cCaVnnWzyMuMpa7p0pTpdTiDfM/edit?usp=sharing"
+              >Team</a>
             </li>
             <li>
               <a
@@ -41,7 +43,9 @@ export default function Footer() {
               <a className="disabled">Terms of Use</a>
             </li>
             <li>
-              <a className="disabled">Privacy Policy</a>
+              <a
+                href="https://docs.google.com/document/d/1O8Q0SlQZnmVC71oJsvDnfOMjF_XmaGPMm1gseR_osv8/edit?usp=sharing" 
+                className="footer-links">Privacy Policy</a>
             </li>
           </ul>
         </div>
@@ -54,7 +58,9 @@ export default function Footer() {
               </a>
             </li>
             <li>
-              <a className="disabled">Join as a Mentee</a>
+              <a
+                className="footer-links" 
+              href="#" >Join as a Mentee</a>
             </li>
             <li>
               <a
@@ -65,10 +71,14 @@ export default function Footer() {
               </a>
             </li>
             <li>
-              <a className="disabled">Join the team</a>
+              <a className="footer-links"
+                href="https://forms.gle/E71ipXFmzWqowQ7U7"
+              >Join the team</a>
             </li>
             <li>
-              <a className="disabled">Contribute</a>
+              <a 
+                href="https://docs.google.com/document/d/1csSpMTWPC7SelhezGkp4w0BnJHLMIEux42BQBZFKdiI/edit?usp=sharing" 
+                className="footer-links">Vacancies</a>
             </li>
           </ul>
         </div>
