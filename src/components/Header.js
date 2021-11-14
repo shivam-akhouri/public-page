@@ -113,7 +113,7 @@ export default function Header() {
         <a href="#" onClick={openModal} title="Register">
           Register
         </a>
-        <a href="#delhi-education-revolution" >
+        <a href="#delhi-education-impact" >
           Delhi Education Revolution
         </a>
         <a href="https://docs.google.com/document/d/1N_zvwn_DQqCU8qE-eLSBHtZwIedGmNKDfQlcqRLdk7s/edit?usp=sharing">
