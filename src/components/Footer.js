@@ -59,8 +59,26 @@ export default function Footer() {
             </li>
             <li>
               <a
-                className="footer-links" 
-              href="#" >Join as a Mentee</a>
+                className="footer-links" data-bs-toggle="modal" data-bs-target="#menteemodal">Join as a Mentee
+                <div class="modal fade" id="menteemodal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title large d-block text-blue" id="exampleModalLabel">Join As Mentee</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                      </div>
+                      <div class="modal-body text-black">
+                      Delhi government school students in classes 9th to 12th can contact their class teacher or their school principal to learn how to register themselves for this programme.
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-primary px-4 mb-4" data-bs-dismiss="modal">Close</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+              </a>
+
             </li>
             <li>
               <a
