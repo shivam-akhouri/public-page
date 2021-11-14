@@ -39,12 +39,10 @@ export default function Footer() {
             <li>
               <a className="disabled">Contact us</a>
             </li>
-            <li>
-              <a className="disabled">Terms of Use</a>
-            </li>
+
             <li>
               <a
-                href="https://docs.google.com/document/d/1O8Q0SlQZnmVC71oJsvDnfOMjF_XmaGPMm1gseR_osv8/edit?usp=sharing" 
+                href="https://docs.google.com/document/d/1O8Q0SlQZnmVC71oJsvDnfOMjF_XmaGPMm1gseR_osv8/edit?usp=sharing"
                 className="footer-links">Privacy Policy</a>
             </li>
           </ul>
@@ -68,7 +66,7 @@ export default function Footer() {
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                       </div>
                       <div class="modal-body text-black">
-                      Delhi government school students in classes 9th to 12th can contact their class teacher or their school principal to learn how to register themselves for this programme.
+                        Delhi government school students in classes 9th to 12th can contact their class teacher or their school principal to learn how to register themselves for this programme.
                       </div>
                       <div class="modal-footer">
                         <button type="button" class="btn btn-primary px-4 mb-4" data-bs-dismiss="modal">Close</button>
@@ -94,8 +92,8 @@ export default function Footer() {
               >Join the team</a>
             </li>
             <li>
-              <a 
-                href="https://docs.google.com/document/d/1csSpMTWPC7SelhezGkp4w0BnJHLMIEux42BQBZFKdiI/edit?usp=sharing" 
+              <a
+                href="https://docs.google.com/document/d/1csSpMTWPC7SelhezGkp4w0BnJHLMIEux42BQBZFKdiI/edit?usp=sharing"
                 className="footer-links">Vacancies</a>
             </li>
           </ul>
