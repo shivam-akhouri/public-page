@@ -24,7 +24,9 @@ export default function Footer() {
               <a href="#about-us">About Us</a>
             </li>
             <li>
-              <a className="disabled">Team</a>
+              <a className="footer-links"
+                href="https://docs.google.com/document/d/1OeOFTGfRV8TLPvO99cCaVnnWzyMuMpa7p0pTpdTiDfM/edit?usp=sharing"
+              >Team</a>
             </li>
             <li>
               <a
@@ -41,7 +43,9 @@ export default function Footer() {
               <a className="disabled">Terms of Use</a>
             </li>
             <li>
-              <a className="disabled">Privacy Policy</a>
+              <a
+                href="https://docs.google.com/document/d/1O8Q0SlQZnmVC71oJsvDnfOMjF_XmaGPMm1gseR_osv8/edit?usp=sharing" 
+                className="footer-links">Privacy Policy</a>
             </li>
           </ul>
         </div>
@@ -54,7 +58,27 @@ export default function Footer() {
               </a>
             </li>
             <li>
-              <a className="disabled">Join as a Mentee</a>
+              <a
+                className="footer-links" data-bs-toggle="modal" data-bs-target="#menteemodal">Join as a Mentee
+                <div class="modal fade" id="menteemodal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title large d-block text-blue" id="exampleModalLabel">Join As Mentee</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                      </div>
+                      <div class="modal-body text-black">
+                      Delhi government school students in classes 9th to 12th can contact their class teacher or their school principal to learn how to register themselves for this programme.
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-primary px-4 mb-4" data-bs-dismiss="modal">Close</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+              </a>
+
             </li>
             <li>
               <a
@@ -65,10 +89,14 @@ export default function Footer() {
               </a>
             </li>
             <li>
-              <a className="disabled">Join the team</a>
+              <a className="footer-links"
+                href="https://forms.gle/E71ipXFmzWqowQ7U7"
+              >Join the team</a>
             </li>
             <li>
-              <a className="disabled">Contribute</a>
+              <a 
+                href="https://docs.google.com/document/d/1csSpMTWPC7SelhezGkp4w0BnJHLMIEux42BQBZFKdiI/edit?usp=sharing" 
+                className="footer-links">Vacancies</a>
             </li>
           </ul>
         </div>
