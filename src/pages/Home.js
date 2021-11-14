@@ -582,7 +582,7 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="row justify-content-center position-relative">
+      <div className="row justify-content-center position-relative" id="delhi-education-impact">
         <div className="col-sm-12 text-center my-4">
           <p className="heading-1">Delhi Education Revolution</p>
 
