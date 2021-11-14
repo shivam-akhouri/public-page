@@ -4,6 +4,7 @@ import CountUp, { useCountUp } from "react-countup";
 import OwlCarousel from "react-owl-carousel";
 import "owl.carousel/dist/assets/owl.carousel.css";
 import "owl.carousel/dist/assets/owl.theme.default.css";
+import { ReactComponent as Revolution } from '../images/svg/Timeline_2.0.svg'
 export default function Home() {
   document.title = "Desh Ke Mentor | Home";
 
@@ -503,7 +504,7 @@ export default function Home() {
       </div>
 
       <div className="container-fluid py-4 py-md-5">
-        <div className="row justify-content-center position-relative">
+        <div className="row justify-content-center position-relative align-items-space-around">
           <div className="col-sm-12 text-center my-4">
             <h2 className="heading-1">Stories of Change</h2>
           </div>
@@ -580,6 +581,20 @@ export default function Home() {
           </div>
         </div>
       </div>
+
+      <div className="row justify-content-center position-relative">
+        <div className="col-sm-12 text-center my-4">
+          <p className="heading-1">Delhi Education Revolution</p>
+
+        </div>
+        <Revolution />
+
+      </div>
+
+
+
+
     </>
+
   );
 }
