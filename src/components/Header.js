@@ -28,7 +28,7 @@ export default function Header() {
           <div className="row align-items-center">
             <div className="col-6 col-md-5 col-lg-4">
               <Link to="#" className="top-logo">
-                <img src={"images/logo.png"} alt="logo" className="top-logo"/>
+                <img src={"images/logo.png"} alt="logo" className="top-logo" />
               </Link>
             </div>
             <div className="col d-none d-lg-block text-center">
@@ -44,32 +44,32 @@ export default function Header() {
               <div className="d-none d-md-inline-block ">
                 <ul className="list-inline text-nowrap">
                   <li className="list-inline-item">
-                      <a href="https://www.facebook.com/Desh-Ke-Mentor-107174851688515/" className="top-social social-fb">
-                        <svg className="icon icon-4x">
-                          <use href="#icon_facebook"></use>
-                        </svg>
-                      </a>
+                    <a href="https://www.facebook.com/Desh-Ke-Mentor-107174851688515/" className="top-social social-fb">
+                      <svg className="icon icon-4x">
+                        <use href="#icon_facebook"></use>
+                      </svg>
+                    </a>
                   </li>
                   <li className="list-inline-item">
-                      <a href="https://instagram.com/deshkementor?utm_medium=copy_link" className="top-social social-insta">
-                        <svg className="icon icon-4x">
-                          <use href="#icon_instagram"></use>
-                        </svg>
-                      </a>
+                    <a href="https://instagram.com/deshkementor?utm_medium=copy_link" className="top-social social-insta">
+                      <svg className="icon icon-4x">
+                        <use href="#icon_instagram"></use>
+                      </svg>
+                    </a>
                   </li>
                   <li className="list-inline-item">
-                      <a href="https://twitter.com/DeshKeMentor?s=20" className="top-social social-tw">
-                        <svg className="icon icon-4x">
-                          <use href="#icon_twitter"></use>
-                        </svg>
-                      </a>
+                    <a href="https://twitter.com/DeshKeMentor?s=20" className="top-social social-tw">
+                      <svg className="icon icon-4x">
+                        <use href="#icon_twitter"></use>
+                      </svg>
+                    </a>
                   </li>
                   <li className="list-inline-item">
-                      <a href="https://youtube.com/channel/UCW2QzzkkzohkKYhVFpsfiAw" className="top-social social-yt">
-                        <svg className="icon icon-4x">
-                          <use href="#icon_youtube"></use>
-                        </svg>
-                      </a>
+                    <a href="https://youtube.com/channel/UCW2QzzkkzohkKYhVFpsfiAw" className="top-social social-yt">
+                      <svg className="icon icon-4x">
+                        <use href="#icon_youtube"></use>
+                      </svg>
+                    </a>
                   </li>
                   <li className="list-inline-item">
                     <a
@@ -102,10 +102,10 @@ export default function Header() {
       </header>
       <nav className="navigation">
         <a href="" className="disabled">
-            Home
+          Home
         </a>
         <a href="#about-us">
-            About Us
+          About Us
         </a>
         <a href="#our-impact">
           Our Impact
@@ -113,7 +113,7 @@ export default function Header() {
         <a href="#" onClick={openModal} title="Register">
           Register
         </a>
-        <a href="" className="disabled">
+        <a href="#delhi-education-revolution" >
           Delhi Education Revolution
         </a>
         <a href="https://docs.google.com/document/d/1N_zvwn_DQqCU8qE-eLSBHtZwIedGmNKDfQlcqRLdk7s/edit?usp=sharing">
