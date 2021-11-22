@@ -4,7 +4,7 @@ import React from 'react'
 
 
 function OurTeam() {
-    return (<div>
+    return (<div style={{ height: '100vh' }}>
         <div style={{ display: 'flex', flexDirection: 'row' }}>
             <div>   Department of Education -
                 Director, Directorate of Education - Shri Hemant Biswas
