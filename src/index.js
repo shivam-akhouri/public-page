@@ -36,6 +36,11 @@ ReactDOM.render(
                     <AboutUs />
                     <Footer />
                 </Route>
+                {/* <Route exact path="/OurTeam">
+                    <Header />
+                    <OurTeam />
+                    <Footer />
+                </Route> */}
             </Switch>
         </BrowserRouter>
         <Icons />
