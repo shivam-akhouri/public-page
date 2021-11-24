@@ -970,4 +970,115 @@ footer .footer-para{
   width: 24px;
   opacity: 1;
 }
+
+/* our team page */
+.head-card-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+
+.head-card { /* top cards with image */
+  width: 21rem;
+  height: 32rem;
+  border-radius: 2rem;
+  box-shadow: 5px 7px 33px rgb(0 33 87 / 25%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  box-sizing: border-box;
+  padding: 0rem 2.5rem;
+}
+
+.head-card-img {
+  background: cadetblue;
+  width: 16rem;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  margin-bottom: 2.5rem;
+}
+
+.head-card-small { /* small cards with no image */
+  max-width: 22rem;
+  width: 22rem;
+  height: 10rem;
+  border-radius: 2rem;
+  box-shadow: 5px 7px 33px rgb(0 33 87 / 25%);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.partners{
+  flex-basis: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.partners:nth-child(2) {
+  border-top: 0.75px solid #C8C9CA;
+  border-bottom: 0.75px solid #C8C9CA;
+  margin: 2rem 0rem;
+}
+
+.partner-img {
+  width: 10rem;
+}
+
+.card-grid-container {
+  margin: 0 auto;
+  display: grid;
+  justify-content: center;
+  grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+  gap: 2rem;
+}
+
+.grid-card {
+  min-width: 16rem;
+  height: 14rem;
+  border-radius: 2rem;
+  box-shadow: 5px 7px 33px rgb(0 33 87 / 25%);
+  /* alternate design - remove box shadow */
+  /* border: 5px solid hsl(0, 0%, 90%); */
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-sizing: border-box;
+  padding: 0 1.5rem;
+}
+
+.grid-card a {
+  color: var(--blue);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+@media (min-width: 768px) {
+  .head-card-container {
+    flex-direction: row;
+  }
+  .head-card-small {
+    flex-basis: 100%;
+  }
+  .partners:nth-child(2) {
+    border-top: none;
+    border-bottom: none;
+    border-left: 0.75px solid #C8C9CA;
+    border-right: 0.75px solid #C8C9CA;
+  }
+  .card-grid-container {
+    max-width: 80vw;
+  }
+}
+
+
 /*# sourceMappingURL=style.css.map */
