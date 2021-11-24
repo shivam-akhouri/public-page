@@ -46,6 +46,9 @@ export default function Register(props){
         valid: true,
         msg: "",
       });
+
+
+      const [entered, setEntered] = useState(0);
     
       const handleChange = (e) => {
         const { name, value } = e.target;
@@ -198,14 +201,27 @@ export default function Register(props){
             "description":register.contribution}),
           }).then(res=>res.json())
           .then(json=>{
-            console.log(json);
-          })
+            if(json.status ==='entry added'){
+              setEntered(1);
+            }
+          }).catch(err=>setEntered(2));
         }
       }
 
       //to remove
     return (
         <>
+        {entered == 1 &&
+          <div class="alert alert-success" role="alert">
+            Entry added Successfully!
+          </div>
+        }
+        {
+          entered == 2 &&
+          <div class="alert alert-danger" role="alert">
+            Some Error Occured :(
+          </div>
+        }
           <form
             className="modal-content shadow border-0 rounded-0 overflow-hidden modal-shape"
             autoComplete="off"
