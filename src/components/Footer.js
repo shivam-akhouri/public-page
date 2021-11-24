@@ -89,9 +89,9 @@ export default function Footer() {
               </a>
             </li>
             <li>
-              <a className="footer-links"
-                href="https://forms.gle/E71ipXFmzWqowQ7U7"
-              >Join the team</a>
+              <Link className="footer-links" to="/joinAsTeam"
+                // href="https://forms.gle/E71ipXFmzWqowQ7U7"
+              >Join the team</Link>
             </li>
             <li>
               <a 

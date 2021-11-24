@@ -12,28 +12,34 @@ import Home from './pages/Home';
 import AboutUs from './pages/AboutUs';
 
 import reportWebVitals from './reportWebVitals';
+import Register from './pages/formpage';
 
 ReactDOM.render(
   <React.StrictMode>
     {/* <BrowserRouter basename={"/work/"}> */} {/*Host in sub-directory folder*/}
     <BrowserRouter>  {/*Host in root*/}
+                <Header />
         <Switch>
             <Route exact path="/">
-                <Header />
                 <Home />
-                <Footer />
             </Route>
             <Route exact path="/Home">
-                <Header />
+                {/* <Header /> */}
                 <Home />
-                <Footer />
+                {/* <Footer /> */}
             </Route>
             <Route exact path="/AboutUs">
-                <Header />
+                {/* <Header /> */}
                 <AboutUs />
-                <Footer />
+                {/* <Footer /> */}
+            </Route>
+            <Route exact path="/joinAsTeam">
+                {/* <Header /> */}
+                <Register />
+                {/* <Footer />  */}
             </Route>
         </Switch>
+                <Footer />
     </BrowserRouter>
     <Icons />
   </React.StrictMode>,
