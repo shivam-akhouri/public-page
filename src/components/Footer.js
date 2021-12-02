@@ -25,8 +25,7 @@ export default function Footer() {
             </li>
             <li>
               <a className="footer-links"
-                href="https://docs.google.com/document/d/1OeOFTGfRV8TLPvO99cCaVnnWzyMuMpa7p0pTpdTiDfM/edit?usp=sharing"
-              >Team</a>
+                href="OurTeam">Team</a>
             </li>
             <li>
               <a

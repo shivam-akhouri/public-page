@@ -13,6 +13,7 @@ import AboutUs from './pages/AboutUs';
 
 import reportWebVitals from './reportWebVitals';
 import Register from './pages/formpage';
+import OurTeam from './components/OurTeam';
 
 ReactDOM.render(
   <React.StrictMode>
@@ -37,6 +38,9 @@ ReactDOM.render(
                 {/* <Header /> */}
                 <Register />
                 {/* <Footer />  */}
+            </Route>
+            <Route exact path="/OurTeam">
+                <OurTeam />
             </Route>
         </Switch>
                 <Footer />
