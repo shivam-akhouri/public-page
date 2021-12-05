@@ -77,7 +77,7 @@ function OurTeam() {
         },
         {
             name: "Mr. Arpit Sharma",
-            position: "Program Manage",
+            position: "Program Manager",
             email: "arpit@deshkementor.com" 
         },
         {
@@ -129,6 +129,7 @@ function OurTeam() {
                     <p>Education Minister, Deputy Chief Minister</p>
                 </div>
             </div>
+            
 
             {/* Department of Education Cards */}
             <h1 style={{textAlign: 'center', margin: '5rem', fontWeight: '600', color: 'var(--blue)'}}>Department of Education</h1>
@@ -145,35 +146,33 @@ function OurTeam() {
                     <h3>Shri Praveen Chaudhary</h3>
                     <p>State Program Head and OSD to Deputy Chief Minister</p>
                 </div>
+                
             </div>
 
             {/* Partners */}
             <hr style={{marginTop: '5rem', height: '0.75px'}}></hr>
             <div className='head-card-container' style={{gap: '0'}}>
                 <div className="partners">
-                    
                     <img src={dtuImg} alt="DTU Logo" className="partner-img"/>
                     <h4>Delhi Technological University</h4>
                     <p>Implementation Partner</p>
-                    
+                </div>
+                <div className="partners">
+                    <img src={saarathiImg} alt="Saarathi Logo" className="partner-img"/>
+                    <h4>Saarathi</h4>
+                    <p>Software Development</p>
                 </div>
                 <div className="partners">
                     <img src={alohomoraImg} alt="Alohomora Logo" className="partner-img"/>
                     <h4>Alohomora Education Foundation</h4>
                     <p>Knowledge Partner</p>
-                    
-                </div>
-                <div className="partners">
-                    <img src={saarathiImg} alt="Saarathi Logo" className="partner-img"/>
-                    <h4>Saarathi</h4>
-                    <p>Software Support</p>
-                   
                 </div>
             </div>
             <hr style={{marginBottom: '5rem', height: '0.75px'}}></hr>
 
             {/* Team Desh Ke Mentor */}
             <h1 style={{textAlign: 'center', margin: '5rem', fontWeight: '600', color: 'var(--blue)'}}>Team Desh Ke Mentor</h1>
+            
             <div className='team-grid-container'>{
                 teamData.map((data) => {
                     return(
