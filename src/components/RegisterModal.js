@@ -141,7 +141,7 @@ export default function RegisterModal() {
     if (
       !register.number.match(
         /\d{10}/
-      )
+      ) || !(register.number.length == 10)
     ) {
       valid = false;
       if (register.number === "") {
