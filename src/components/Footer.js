@@ -25,8 +25,7 @@ export default function Footer() {
             </li>
             <li>
               <a className="footer-links"
-                href="https://docs.google.com/document/d/1OeOFTGfRV8TLPvO99cCaVnnWzyMuMpa7p0pTpdTiDfM/edit?usp=sharing"
-              >Team</a>
+                href="OurTeam">Team</a>
             </li>
             <li>
               <a
@@ -87,9 +86,9 @@ export default function Footer() {
               </a>
             </li>
             <li>
-              <a className="footer-links"
-                href="https://forms.gle/E71ipXFmzWqowQ7U7"
-              >Join the team</a>
+              <Link className="footer-links" to="/joinAsTeam"
+                // href="https://forms.gle/E71ipXFmzWqowQ7U7"
+              >Join the team</Link>
             </li>
             <li>
               <a

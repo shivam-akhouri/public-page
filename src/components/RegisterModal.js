@@ -151,8 +151,8 @@ export default function RegisterModal() {
     //phone number
     if (
       !register.number.match(
-        /((\+*)((0[ -]*)*|((91 )*))((\d{12})+|(\d{10})+))|\d{5}([- ]*)\d{6}/
-      )
+        /\d{10}/
+      ) || !(register.number.length == 10)
     ) {
       valid = false;
       if (register.number === "") {
@@ -160,7 +160,7 @@ export default function RegisterModal() {
         setErr3({ ...err3, msg: "Phone number cannot be empty!" });
       } else {
         setErr3({ ...err3, valid: false });
-        setErr3({ ...err3, msg: "Invalid Phone Number!" });
+        setErr3({ ...err3, msg: "Invalid Phone Number! Enter only 10 digit mobile number" });
       }
     }
 
@@ -168,7 +168,7 @@ export default function RegisterModal() {
     if (register.password.length < 8) {
       valid = false;
       setErr4({ ...err4, valid: false });
-      setErr4({ ...err4, msg: "Passwords need to be at least 8 charachters!" });
+      setErr4({ ...err4, msg: "Passwords need to be at least 8 characters!" });
     }
 
     //gender

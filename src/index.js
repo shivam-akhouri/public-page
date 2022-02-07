@@ -12,35 +12,42 @@ import Home from './pages/Home';
 import AboutUs from './pages/AboutUs';
 
 import reportWebVitals from './reportWebVitals';
+import Register from './pages/formpage';
 import OurTeam from './components/OurTeam';
 
-/*<OurTeam />*/
-
 ReactDOM.render(
-    <React.StrictMode>
-        {/* <BrowserRouter basename={"/work/"}> */} {/*Host in sub-directory folder*/}
-        <BrowserRouter>  {/*Host in root*/}
-            <Switch>
-                <Route exact path="/">
-                    <Header />
-                    <Home />
-                    <Footer />
-                </Route>
-                <Route exact path="/Home">
-                    <Header />
-                    <Home />
-                    <Footer />
-                </Route>
-                <Route exact path="/AboutUs">
-                    <Header />
-                    <AboutUs />
-                    <Footer />
-                </Route>
-            </Switch>
-        </BrowserRouter>
-        <Icons />
-    </React.StrictMode>,
-    document.getElementById('root')
+  <React.StrictMode>
+    {/* <BrowserRouter basename={"/work/"}> */} {/*Host in sub-directory folder*/}
+    <BrowserRouter>  {/*Host in root*/}
+                <Header />
+        <Switch>
+            <Route exact path="/">
+                <Home />
+            </Route>
+            <Route exact path="/Home">
+                {/* <Header /> */}
+                <Home />
+                {/* <Footer /> */}
+            </Route>
+            <Route exact path="/AboutUs">
+                {/* <Header /> */}
+                <AboutUs />
+                {/* <Footer /> */}
+            </Route>
+            <Route exact path="/joinAsTeam">
+                {/* <Header /> */}
+                <Register />
+                {/* <Footer />  */}
+            </Route>
+            <Route exact path="/OurTeam">
+                <OurTeam />
+            </Route>
+        </Switch>
+                <Footer />
+    </BrowserRouter>
+    <Icons />
+  </React.StrictMode>,
+  document.getElementById('root')
 );
 
 reportWebVitals();

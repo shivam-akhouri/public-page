@@ -101,16 +101,16 @@ export default function Header() {
         </div>
       </header>
       <nav className="navigation">
-        <a href="" className="disabled">
-          Home
+        <a href="/">
+            Home
         </a>
-        <a href="#about-us">
-          About Us
+        <a href="/#about-us">
+            About Us
         </a>
-        <a href="#our-impact">
+        <a href="/#our-impact">
           Our Impact
         </a>
-        <a href="#" onClick={openModal} title="Register">
+        <a href="/#" onClick={openModal} title="Register">
           Register
         </a>
         <a href="#delhi-education-impact" >
