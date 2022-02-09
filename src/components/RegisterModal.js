@@ -1,7 +1,18 @@
 import React, { useState } from "react";
 import { Modal } from "bootstrap";
+import TextField from '@mui/material/TextField';
+
+
 
 export default function RegisterModal() {
+  
+  function openModal(e) {
+    e.preventDefault();
+    let subsModal = new Modal(document.getElementById("OTP"));
+    subsModal.show();
+  }
+  
+
   const [register, setRegister] = useState({
     name: "",
     email: "",
@@ -320,7 +331,8 @@ export default function RegisterModal() {
 
   return (
     <>
-      <div
+      
+      <div 
         className="modal fade"
         id="registmodal"
         tabIndex="-1"
@@ -715,10 +727,14 @@ export default function RegisterModal() {
               <button
                 type="button"
                 className="btn btn-primary px-4 mb-4"
-                onClick={userRegister}
+               onClick={openModal}
+               //onClick={userRegister} 
               >
                 Register Now
               </button>
+
+              
+    
             </div>
           </form>
         </div>
@@ -733,6 +749,7 @@ export default function RegisterModal() {
         tabIndex="-1"
         data-bs-backdrop="static"
       >
+       
         <div className="modal-dialog modal-lg modal-dialog-centered">
           <div
             className="modal-content shadow border-0 rounded-0 pb-4 px-4 px-md-5 pb-md-5"
@@ -782,6 +799,71 @@ export default function RegisterModal() {
               </div>
             </div>
           </div>
+        </div>
+      </div>
+
+
+      {/* OTP POPUP */}
+      <div style={{alignSelf:'center',justifySelf:'center'}}
+        className="modal fade"
+        id="OTP"
+        tabIndex="-1"
+        data-bs-backdrop="static"
+        aria-hidden="true"
+      >
+        <div className="modal-dialog modal-xl modal-dialog-centered">
+          <form
+            className="modal-content shadow border-0 rounded-0 overflow-hidden modal-shape"
+            autoComplete="off"
+          >
+            <img
+              src={"images/shape/blue-circle.svg"}
+              className="shape mdshape-1"
+              alt="shape-5"
+            />
+            <img
+              src={"images/shape/lightblue-diamond.svg"}
+              className="shape mdshape-2"
+              alt="shape-6"
+            />
+            <img
+              src={"images/shape/yellow-circle.svg"}
+              className="shape mdshape-3"
+              alt="shape-5"
+            />
+            <img
+              src={"images/shape/lightyellow-diamond.svg"}
+              className="shape mdshape-4"
+              alt="shape-6"
+            />
+            <div className="modal-header d-block position-relative ">
+           
+              
+            <div style={{display:'flex',flexDirection:'column',alignItems:'center'}}>
+            <h4  className="modal-title fw-bold text-blue">
+               OTP SENT
+              </h4>
+            <h6 style={{color:'red'}} className="modal-title fw-bold text-blue">
+            AN OTP HAS BEEN SENT TO YOUR REGISTERED MOBILE NUMBER!
+              </h6>
+          
+              
+              <TextField style={{margin:'1%'}}
+  
+ 
+  label="Enter otp to continue"
+/>     
+
+                        
+<button style={{margin:'1%',backgroundColor:'dodgerblue'}}id="registerModalDismiss" type="button" class="btn btn-secondary" data-bs-dismiss="modal" >Submit</button>           
+</div>           
+               
+              
+
+              
+    
+            </div>
+          </form>
         </div>
       </div>
     </>
