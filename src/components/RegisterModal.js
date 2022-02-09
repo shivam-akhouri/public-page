@@ -727,8 +727,10 @@ export default function RegisterModal() {
               <button
                 type="button"
                 className="btn btn-primary px-4 mb-4"
-               onClick={openModal}
-               //onClick={userRegister} 
+                
+              // onClick={openModal}
+
+               onClick={userRegister} 
               >
                 Register Now
               </button>
