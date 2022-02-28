@@ -1,17 +1,18 @@
 import React, { useState } from "react";
 import { Modal } from "bootstrap";
 import TextField from '@mui/material/TextField';
-
-
+import { v4 } from "uuid";
+const crypto = require("crypto");
 
 export default function RegisterModal() {
   
-  function openModal(e) {
-    e.preventDefault();
+  async function openModal() {
+    // e.preventDefault();
     let subsModal = new Modal(document.getElementById("OTP"));
     subsModal.show();
   }
   
+  const [otp, setOtp] = useState("");
 
   const [register, setRegister] = useState({
     name: "",
@@ -239,54 +240,34 @@ export default function RegisterModal() {
     return x;
   }
 
-  async function userRegister() {
-    setErr1({ ...err1, valid: true });
-    setErr1({ ...err1, msg: "" });
-    setErr2({ ...err2, valid: true });
-    setErr2({ ...err2, msg: "" });
-    setErr3({ ...err3, valid: true });
-    setErr3({ ...err3, msg: "" });
-    setErr4({ ...err4, valid: true });
-    setErr4({ ...err4, msg: "" });
-    setErr5({ ...err5, valid: true });
-    setErr5({ ...err5, msg: "" });
-    setErr6({ ...err6, valid: true });
-    setErr6({ ...err6, msg: "" });
-    setErr7({ ...err7, valid: true });
-    setErr7({ ...err7, msg: "" });
-    setErr8({ ...err8, valid: true });
-    setErr8({ ...err8, msg: "" });
-    setErr9({ ...err9, valid: true });
-    setErr9({ ...err9, msg: "" });
-    setErr10({ ...err10, valid: true });
-    setErr10({ ...err10, msg: "" });
-    setErr11({ ...err11, valid: true });
-    setErr11({ ...err11, msg: "" });
-
-    let item = {
-      name: register.name,
-      email: register.email,
-      number: register.number,
-      password: register.password,
-      dob: dataFormatter(),
-      gender: register.gender,
-      language: register.language,
-      state: register.state,
-      area: register.area,
-      residential_address: register.residential_address,
-      pincode: register.pincode,
-      city: register.city,
+  async function registerUser(){
+    var item = JSON.parse(localStorage.getItem("item"));
+    var token = JSON.parse(localStorage.getItem("request_token"))
+    // console.log(item);
+    var body = {
+      area: item.area,
+      city: item.city,
+      dob: item.dob,
+      email: item.email,
+      gender: item.gender,
+      language: item.language,
+      name: item.name,
+      number: item.number,
+      password: item.password,
+      pincode: item.pincode,
+      residential_address: item.residential_address,
+      state: item.state,
+      request_token : token,
+      otp: otp
     };
-    console.log(item);
-    const result = validation();
-    if (result) {
-      await fetch("https://pragyanpandey05.pythonanywhere.com/api/register1", {
+    console.log(body);
+    await fetch("https://pragyanpandey05.pythonanywhere.com/api/webregister", {
         method: "POST",
         headers: {
           Accept: "application/json",
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(item),
+        body: JSON.stringify(body),
       })
         .then((response) => response.json())
         .then((json) => {
@@ -326,6 +307,163 @@ export default function RegisterModal() {
         .catch((error) => {
           console.error(error);
         });
+  }
+
+  async function userRegister() {
+    setErr1({ ...err1, valid: true });
+    setErr1({ ...err1, msg: "" });
+    setErr2({ ...err2, valid: true });
+    setErr2({ ...err2, msg: "" });
+    setErr3({ ...err3, valid: true });
+    setErr3({ ...err3, msg: "" });
+    setErr4({ ...err4, valid: true });
+    setErr4({ ...err4, msg: "" });
+    setErr5({ ...err5, valid: true });
+    setErr5({ ...err5, msg: "" });
+    setErr6({ ...err6, valid: true });
+    setErr6({ ...err6, msg: "" });
+    setErr7({ ...err7, valid: true });
+    setErr7({ ...err7, msg: "" });
+    setErr8({ ...err8, valid: true });
+    setErr8({ ...err8, msg: "" });
+    setErr9({ ...err9, valid: true });
+    setErr9({ ...err9, msg: "" });
+    setErr10({ ...err10, valid: true });
+    setErr10({ ...err10, msg: "" });
+    setErr11({ ...err11, valid: true });
+    setErr11({ ...err11, msg: "" });
+
+    let item = {
+      name: register.name,
+      email: register.email,
+      number: register.number,
+      password: register.password,
+      dob: dataFormatter(),
+      gender: register.gender,
+      language: register.language,
+      state: register.state,
+      area: register.area,
+      residential_address: register.residential_address,
+      pincode: register.pincode,
+      city: register.city,
+    };
+    localStorage.setItem("item", JSON.stringify(item));
+    const result = validation();
+    if (result) {
+      // await fetch("https://pragyanpandey05.pythonanywhere.com/api/register1", {
+      //   method: "POST",
+      //   headers: {
+      //     Accept: "application/json",
+      //     "Content-Type": "application/json",
+      //   },
+      //   body: JSON.stringify(item),
+      // })
+      //   .then((response) => response.json())
+      //   .then((json) => {
+      //     if (json.status === "entry not added") {
+      //       alert("Please fill in all fields");
+      //     }
+      //     if (json.status === "user already exists") {
+      //       alert("User already exists");
+      //     }
+      //     if (json.status === "entry added") {
+      //       const data = {
+      //         number: register.number,
+      //       };
+      //       setRegister({
+      //         name: "",
+      //         email: "",
+      //         number: "",
+      //         password: "",
+      //         dob: "",
+      //         gender: "",
+      //         language: "",
+      //         state: "",
+      //         area: "",
+      //         residential_address: "",
+      //         pincode: "",
+      //         city: "",
+      //       });
+      //       document.getElementById("registerModalDismiss").click();
+
+      //       let successModal = new Modal(
+      //         document.getElementById("successModal")
+      //       );
+      //       successModal.show();
+      //       sendSMS(data);
+      //     }
+      //   })
+      //   .catch((error) => {
+      //     console.error(error);
+      //   });
+      var uuid = v4();
+      function generateUuid(uuid, number){
+        let genuuid = "";
+        genuuid = String(uuid).substr(0,8);
+        genuuid = genuuid + "-"+String(number).substr(0,3)+"6";
+        genuuid += "-7"+String(number).substr(3, 3);
+        genuuid += "-9"+String(number).substr(6, 3);
+        genuuid += "-"+String(uuid).substr(24, 10) + String(number).substr(9, 2);
+        return genuuid;
+      }
+      function new_number(num){
+          return Number(num)+9821784747;
+      }
+      function magic(num){
+        let initial = 'a';
+        let finalstr ="";
+        let num_str = String(num);
+        for(var i =0;i< num_str.length; i++){
+          finalstr = finalstr +String.fromCharCode(97+Number(num_str[i]));
+        }
+        return finalstr
+      }
+      function dataPk(number, uuid){
+        var res = "";
+        res += String(number).substr(0, 8) + "-"+String(number).substr(8,2)+String(uuid).substr(11, 25)
+        return res;
+      }
+      const encNumber = magic(new_number(item.number));
+      var pk = dataPk(encNumber, uuid);
+      var token = generateUuid(uuid, encNumber);
+      var date = new Date().toString();
+      var timestamp = crypto.createHash("sha1").update(date).digest("hex");
+      // console.log(v4());
+      // console.log(timestamp.toString());
+      var signature = (crypto.createHash("sha1").update("KJKTtrSRVjbL").digest("hex")).toString();
+      // console.log(pk);
+      // console.log(uuid);
+      // console.log(timestamp.toString())
+      // console.log(token);
+      // console.log(signature);
+      // console.log(date);
+      var requestData = {
+        "oauth_data_pk":pk, //number encryption (fake)
+        "oauth_client_key": uuid, //random uuid
+        "oauth_target_id": timestamp.toString(), // server key (timestamp in SHA-1 hash)
+        "oauth_dtk_token": token,//#encrypted number
+        "oauth_version":"2.0", //constant
+        "oauth_signature_method":"HMAC-SHA1", //constant
+        "oauth_signature": signature, //randomly generated word encrypted with SHA-1
+        "oauth_timestamp": date //timestamp in string
+      }
+        
+      await fetch("https://pragyanpandey05.pythonanywhere.com/api/redirect/hy472tq", {
+        method: "POST",
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(requestData),
+      }).then(resp=>resp.json())
+        .then(json=>{
+        if(json.status == "message sent"){
+          console.log(json);
+          localStorage.setItem("request_token", JSON.stringify(json.request_token));
+          openModal();
+        }
+      })
+      .catch(e=>console.log("Some Error occured"));
     }
   }
 
@@ -850,20 +988,12 @@ export default function RegisterModal() {
               </h6>
           
               
-              <TextField style={{margin:'1%'}}
-  
- 
-  label="Enter otp to continue"
-/>     
+              <TextField style={{margin:'1%'}} label="Enter otp to continue" value={otp} onChange={(e)=>setOtp(e.target.value)}/>     
 
                         
-<button style={{margin:'1%',backgroundColor:'dodgerblue'}}id="registerModalDismiss" type="button" class="btn btn-secondary" data-bs-dismiss="modal" >Submit</button>           
-</div>           
-               
-              
-
-              
-    
+<button style={{margin:'1%',backgroundColor:'dodgerblue'}}id="registerModalDismiss" type="button" class="btn btn-secondary" data-bs-dismiss="modal" 
+onClick={registerUser}>Submit</button>           
+</div> 
             </div>
           </form>
         </div>
