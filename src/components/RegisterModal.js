@@ -701,7 +701,7 @@ export default function RegisterModal() {
                       </option>
                       <option value="Andhra Pradesh">Andhra Pradesh</option>
                       <option value="Andaman and Nicobar Islands">
-                        Andaman and Nicobar Islands
+                      Andaman and Nicobar Island
                       </option>
                       <option value="Arunachal Pradesh">
                         Arunachal Pradesh
@@ -710,10 +710,10 @@ export default function RegisterModal() {
                       <option value="Bihar">Bihar</option>
                       <option value="Chandigarh">Chandigarh</option>
                       <option value="Chhattisgarh">Chhattisgarh</option>
-                      <option value="Dadar and Nagar Haveli">
-                        Dadar and Nagar Haveli
+                      <option value="Dadra and Nagar Haveli and Daman and Diu">
+                      Dadra and Nagar Haveli and Daman and Diu
                       </option>
-                      <option value="Daman and Diu">Daman and Diu</option>
+               
                       <option value="Delhi">Delhi</option>
                       <option value="Lakshadweep">Lakshadweep</option>
                       <option value="Ladakh">Ladakh</option>
