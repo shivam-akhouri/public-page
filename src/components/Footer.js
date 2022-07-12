@@ -50,7 +50,7 @@ export default function Footer() {
           <h4>Get Involved</h4>
           <ul className="footer-links">
             <li>
-              <a href="#" onClick={openModal} className="footer-links">
+              <a href="https://deshkementor.page.link/tutorial" target={"_blank"} className="footer-links">
                 Join as a Mentor
               </a>
             </li>
@@ -134,17 +134,16 @@ export default function Footer() {
             <li className="footer-links">
               <a className="footer-links disabled">Address</a> <br />
               <p className="footer-para">
-                FW4FF9, 1st Floor<br />
-                Mechanical Engineering Department
-                Delhi Technological University<br />
-                Bawana Road, Delhi-110042, India
+              Delhi Commission for Protection of Child Rights<br/>
+              5th Floor, ISBT Building<br/>
+              Kashmere Gate, New Delhi, Delhi-110006
               </p>
             </li>
             <li>
               <a className="footer-links disabled">Phone</a> <br />
               <p className="footer-para">
-                +91 11 2729 8073<br />
                 +91 93158 49885<br />
+                Monday to Friday (9:30 am to 6:30 pm)
               </p>
             </li>
             <li>

@@ -5,110 +5,56 @@ import deputyImg from '../images/our-team/deputycm.png';
 import dtuImg from '../images/our-team/dtu.png';
 import alohomoraImg from '../images/our-team/alohomora.png';
 import saarathiImg from '../images/our-team/saarathi.png';
+import dcpcr from '../images/our-team/DCPCR.jpeg'
 
 /* doc link-  https://docs.google.com/document/d/1g2vRm_g6phcWiybLyVKK_g_3J6U4dI_wEmJKbYkUGvg/edit */
 
 function OurTeam() {
     const teamData = [
         {
-            name: "Prof. Amit Srivastava",
-            position: "Chairman, DTU",
-            email: "aksrivastava@dce.ac.in" 
+            name:"Sh. Anurag Kundu",
+            position:"Chairperson",
+            email: "DCPCR"
         },
         {
-            name: "Sh. Anil Kumar Saini",
+            name:"Sh. Anil Kumar",
             position: "Project Coordinator",
-            email: "anilsaini.del@gmail.com" 
+            email: "Deputy CM Office"
         },
         {
-            name: "Dr. Nahar Singh",
-            position: "SCERT Team Member",
-            email: "drnahar.singh@gmail.com" 
-        },
-        {
-            name: "Dr. Girish Kumar",
-            position: "DTU Member",
-            email: "girishkumar@dce.ac.in" 
-        },
-        {
-            name: "Prof. Neeta Pandey",
-            position: "DTU Member",
-            email: "neetapandey@dce.ac.in" 
-        },
-        {
-            name: "Prof. Kapil Sharma",
-            position: "SCERT Member",
-            email: "kapsharma1977@gmail.com" 
-        },
-        {
-            name: "Sh. K. Murugan",
-            position: "DOE Member",
-            email: "kmurugan@gmail.com" 
-        },
-        {
-            name: "Prof. Rajeshwari Pandey",
+            name:"Ms. Ranjana Prasad",
             position: "Member",
-            email: "rajeshwaripandey@gmail.com" 
+            email: "DCPCR"
         },
         {
-            name: "Ms. Alisha Butala",
-            position: "Delhi Government Member",
-            email: "alisha.butala@gmail.com" 
+            name:"Mr. Ankit Jayant",
+            position:"Project Manager (Tech)",
+            email: "DCPCR"
         },
         {
-            name: "Ms. Yati Chaturvedi",
-            position: "Delhi Government Member",
-            email: "yatichaturvedi199595@gmail.com" 
+            name:"Mr. Abhinay Kumar Singh",
+            position:"Project Manager",
+            email: "DCPCR"
         },
         {
-            name: "Mr Ankur Sehgal",
-            position: "DTU Project Head",
-            email: "ankursehgal@deshkementor.com" 
+            name:"Mr. Arpit Sharma",
+            position:"Project Manager",
+            email: "DCPCR"
         },
         {
-            name: "Mr Abhinay Singh",
-            position: "DTU Program Manager",
-            email: "abhinaysingh@deshkementor.com" 
+            name:"Ms. Ekta Gupta",
+            position:"Project Manager",
+            email: "DCPCR"
         },
         {
-            name: "Mr. Deendyal Singh",
-            position: "Program Manager",
-            email: "deendyal@deshkementor.com" 
+            name:"Mr. Prerak Mittal",
+            position:"Project Manager",
+            email: "DCPCR"
         },
         {
-            name: "Mr. Arpit Sharma",
-            position: "Program Manager",
-            email: "arpit@deshkementor.com" 
-        },
-        {
-            name: "Ms. Ekta Gupta",
-            position: "Program Manager",
-            email: "ektagupta@deshkementor.com" 
-        },
-        {
-            name: "Mr. Prerak Mittal",
-            position: "Program Manager",
-            email: "prerak.mittal@deshkementor.com" 
-        },
-        {
-            name: "Mr. Ankit Jayant",
-            position: "Program Manager",
-            email: "ankitjayant@deshkementor.com" 
-        },
-        {
-            name: "Mr. Tanuj Pratap Singh",
-            position: "Program Manager",
-            email: "tanujjadon@deshkementor.com" 
-        },
-        {
-            name: "Ms. Arisha Parwez",
-            position: "Social Media Assosciate",
-            email: "ankitjayant@deshkementor.com" 
-        },
-        {
-            name: "Mr Lohit Lodhwal",
-            position: "Video Producer",
-            email: "lohitlodhwalfilms@gmail.com" 
+            name:"Ms. Unnati Gupta",
+            position:"Project Manager",
+            email: "DCPCR"
         }
     ]
 
@@ -153,8 +99,8 @@ function OurTeam() {
             <hr style={{marginTop: '5rem', height: '0.75px'}}></hr>
             <div className='head-card-container' style={{gap: '0'}}>
                 <div className="partners">
-                    <img src={dtuImg} alt="DTU Logo" className="partner-img"/>
-                    <h4>Delhi Technological University</h4>
+                    <img src={dcpcr} alt="DTU Logo" className="partner-img"/>
+                    <h4>Delhi Commission for Protection of Child Rights</h4>
                     <p>Implementation Partner</p>
                 </div>
                 <div className="partners">
@@ -187,8 +133,8 @@ function OurTeam() {
             </div>
 
             {/* Education Members Cards */}
-            <h1 style={{textAlign: 'center', margin: '5rem', fontWeight: '600', color: 'var(--blue)'}}>Education Members</h1>
-            <div className='edu-grid-container'>
+            {/* <h1 style={{textAlign: 'center', margin: '5rem', fontWeight: '600', color: 'var(--blue)'}}>Education Members</h1> */}
+            {/* <div className='edu-grid-container'>
                 <div className="grid-card">
                     <h5>Rahul Tiwari</h5>
                     <p>Assosciate Delhi Assembly Research Fellow (DARC)</p>
@@ -197,7 +143,7 @@ function OurTeam() {
                     <h5>Anubhuti Yadav</h5>
                     <p>Delhi Assembly Research Fellow (DARC) </p>
                 </div>
-            </div>
+            </div> */}
         </div>
     )}
 
